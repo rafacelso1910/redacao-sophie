@@ -687,9 +687,13 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
     animateCounter(resTotalScore, data.total_score);
     resGradeLevel.textContent = data.grade_level;
     resThemeSubtitle.textContent = `Tema: ${themeTitle}`;
-    // Garantia de saudacao personalizada da Sophie por pontuacao
-    let msgSophie = (data.personal_message || '').replace(/lari/gi, 'Sophie').replace(/gatinha ruiva/gi, 'Sabrina Sato');
-    msgSophie = msgSophie.replace(/^(olá|oi|eae|boa|parabéns|olá,?\s*sophie!?|eae\s*sophie,?)[\s!,.]*/i, '').trim();
+    // Limpeza estrita e saudacao para Sophie
+    let msgSophie = String(data.personal_message || '');
+    // Remove qualquer mencao a outros nomes
+    msgSophie = msgSophie.split(/lari/i).join('Sophie');
+    msgSophie = msgSophie.split(/gatinha ruiva/i).join('Sabrina Sato');
+    // Remove saudacao inicial do modelo
+    msgSophie = msgSophie.replace(/^[^.!?:]*?[!?:.]\s*/i, '').trim();
     if (data.total_score >= 700) {
       resPersonalMessage.textContent = "Boa sabrina sato! " + msgSophie;
     } else {
