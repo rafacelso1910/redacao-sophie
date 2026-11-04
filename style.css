@@ -192,3 +192,35 @@ body {
     break-inside: avoid;
   }
 }
+
+/* ---- Ajustes para celular (Android/Xiaomi etc.) ---- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html.dark { color-scheme: dark; }
+.lined-paper-container > .flex { display: flex; align-items: stretch; width: 100%; }
+.lined-paper-container .flex-1 { flex: 1 1 0%; min-width: 0; display: block; }
+.lined-paper-gutter { flex: 0 0 auto; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
+.lined-paper-textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent !important;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 28px;
+  font-size: 16px; /* 16px evita o zoom automático ao tocar no campo */
+  overflow-x: hidden;
+}
+.dark .lined-paper-textarea { color: #e2e8f0; caret-color: #fbbf24; }
+.dark .lined-paper-textarea::placeholder { color: #64748b; }
+@media (max-width: 640px) {
+  .lined-paper-gutter { width: 30px; font-size: 11px; line-height: 28px; }
+  .lined-paper-textarea { padding: 14px 10px; font-size: 16px; }
+}
+@media (max-width: 767px) {
+  /* no celular a navegação é a barra de baixo; os botões do topo só duplicam e estouram a largura */
+  #tabButtons { display: none !important; }
+  body { overflow-x: hidden; }
+}
