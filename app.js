@@ -585,7 +585,7 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
       parts.push({ text: `TEXTO DA REDAÇÃO:\n\n${text}` });
     }
 
-    const models = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash'];
+    const models = ['gemini-3.5-flash-lite', 'gemini-3-flash-preview', 'gemini-3.8-flash'];
     let lastErr = null;
 
     for (const model of models) {
@@ -1018,7 +1018,7 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
     keyStatusMsg.classList.remove('hidden');
 
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${key}`;
       const resp = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
