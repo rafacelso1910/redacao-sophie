@@ -490,7 +490,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     const key = getActiveApiKey();
     const systemPrompt = `Você é um avaliador experiente de redação do ENEM no Brasil, com perfil técnico, pedagógico e objetivo.
 Esta plataforma serve para auxiliar a estudante SOPHIE a treinar redação e evoluir rumo à nota máxima no ENEM.
-NUNCA mencione outro nome além de Sophie ou 'Sabrina Sato'.
+Use somente o nome Sophie (ou o apelido 'Sabrina Sato') e não cite o nome de nenhuma outra pessoa.
 
 REGRA DE SAUDAÇÃO OBRIGATÓRIA NO CAMPO 'personal_message':
 - Se total_score >= 700: comece EXATAMENTE com: "Boa sabrina sato! " e complete com a análise construtiva dos pontos fortes e o que manter.
@@ -675,7 +675,21 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
   });
 
   // 11. Renderização dos Resultados
+  // Limpeza geral: troca nomes de outras pessoas em TODOS os textos da análise
+  const NOME_OUTRA_PESSOA = /\blari\b|\bgatinha ruiva\b/gi;
+  function limparNomes(valor) {
+    if (typeof valor === 'string') return valor.replace(NOME_OUTRA_PESSOA, 'Sophie');
+    if (Array.isArray(valor)) return valor.map(limparNomes);
+    if (valor && typeof valor === 'object') {
+      const out = {};
+      for (const k of Object.keys(valor)) out[k] = limparNomes(valor[k]);
+      return out;
+    }
+    return valor;
+  }
+
   function displayResults(data, themeTitle) {
+    data = limparNomes(data);
     lastAnalysisResult = { ...data, theme: themeTitle, timestamp: new Date().toISOString() };
 
     resultsSection.classList.remove('hidden');
@@ -687,13 +701,9 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
     animateCounter(resTotalScore, data.total_score);
     resGradeLevel.textContent = data.grade_level;
     resThemeSubtitle.textContent = `Tema: ${themeTitle}`;
-    // Limpeza estrita e saudacao para Sophie
+    // Saudação fixa por nota; só tira a saudação do modelo se ela realmente for uma saudação
     let msgSophie = String(data.personal_message || '');
-    // Remove qualquer mencao a outros nomes
-    msgSophie = msgSophie.split(/lari/i).join('Sophie');
-    msgSophie = msgSophie.split(/gatinha ruiva/i).join('Sabrina Sato');
-    // Remove saudacao inicial do modelo
-    msgSophie = msgSophie.replace(/^[^.!?:]*?[!?:.]\s*/i, '').trim();
+    msgSophie = msgSophie.replace(/^\s*(?:oi|ol[aá]|eae|e a[ií]|boa|parab[eé]ns|querid[oa]|sophie)\b[^.!?:\n]{0,60}[!?:.,]+\s*/i, '').trim();
     if (data.total_score >= 700) {
       resPersonalMessage.textContent = "Boa sabrina sato! " + msgSophie;
     } else {
