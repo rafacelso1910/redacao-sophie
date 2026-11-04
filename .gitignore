@@ -1,0 +1,21 @@
+# Ambientes virtuais
+.venv/
+venv/
+ENV/
+env/
+
+# Arquivos locais e temporarios
+.env
+cloudflared.exe
+cloudflared.log
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

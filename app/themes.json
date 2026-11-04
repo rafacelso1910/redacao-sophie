@@ -1,0 +1,668 @@
+[
+  {
+    "id": "enem-2024",
+    "title": "Desafios para a valorização da herança africana no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Debate sobre a importância histórica, cultural e identitária da ancestralidade afro-brasileira e os obstáculos do racismo estrutural para seu pleno reconhecimento.",
+    "texts": [
+      "Texto 1: A cultura afro-brasileira é pilar fundamental da construção nacional (artes, culinária, filosofia, línguas). O apagamento histórico, contudo, ainda perpetua visões eurocêntricas limitadas.",
+      "Texto 2: Dados do IBGE comprovam que a população preta e parda compõe mais de 56% do país, mas ainda enfrenta desvantagens acentuadas em renda, saúde e representatividade.",
+      "Texto 3: A Lei 10.639/03 estabeleceu a obrigatoriedade do ensino de história e cultura afro-brasileira nas escolas, mas ainda demanda fiscalização e formação docente continuada."
+    ],
+    "keywords": [
+      "Racismo estrutural",
+      "Lei 10.639/03",
+      "Epistemicídio (Sueli Carneiro)",
+      "Reparação histórica",
+      "Ancestralidade"
+    ]
+  },
+  {
+    "id": "enem-2023",
+    "title": "Invisibilidade do trabalho de cuidado realizado pela mulher no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Reflexão sobre a sobrecarga física e psicológica decorrente das atividades domésticas e de cuidado não remuneradas desempenhadas historicamente por mulheres.",
+    "texts": [
+      "Texto 1: O trabalho de cuidado sustenta a reprodução social e a economia global. Apesar de indispensável, raramente é contabilizado no PIB ou valorizado socialmente.",
+      "Texto 2: As mulheres no Brasil gastam em média 21,3 horas semanais em tarefas de cuidado, mais do que o dobro do tempo despendido pelos homens.",
+      "Texto 3: A desigualdade na divisão do trabalho reprodutivo reduz o acesso de mulheres a empregos formais de qualidade, gerando dependência financeira e exaustão emocional."
+    ],
+    "keywords": [
+      "Divisão sexual do trabalho",
+      "Economia do cuidado",
+      "Sobrecarga feminina",
+      "Políticas públicas de creches",
+      "Silvia Federici"
+    ]
+  },
+  {
+    "id": "enem-2022",
+    "title": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Discussão sobre a preservação da identidade cultural, territórios ancestrais e direitos de povos indígenas, quilombolas, ribeirinhos e comunidades extrativistas.",
+    "texts": [
+      "Texto 1: Comunidades tradicionais guardam saberes milenares indispensáveis para a proteção da biodiversidade e dos biomas brasileiros contra a degradação predatória.",
+      "Texto 2: Conflitos fundiários, invasões ilegais de terras, garimpo e desmatamento colocam em risco constante a sobrevivência física e cultural dessas populações.",
+      "Texto 3: O Artigo 231 da Constituição assegura aos povos indígenas seus direitos originários sobre as terras que tradicionalmente ocupam."
+    ],
+    "keywords": [
+      "Povos originários",
+      "Quilombolas",
+      "Demarcação de terras",
+      "Preservação da sociobiodiversidade",
+      "Ailton Krenak"
+    ]
+  },
+  {
+    "id": "enem-2021",
+    "title": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Análise sobre como a falta de certidão de nascimento impede milhões de brasileiros de acessarem direitos fundamentais, benefícios sociais e cidadania plena.",
+    "texts": [
+      "Texto 1: Sem certidão de nascimento, o cidadão não existe para o Estado: não obtém CPF, vacinas, matrícula escolar regular ou programas de transferência de renda.",
+      "Texto 2: Milhões de brasileiros vivem na condição de sub-registro, fenômeno concentrado principalmente entre populações rurais, periféricas e em extrema pobreza.",
+      "Texto 3: A gratuidade da primeira via do registro civil é garantida por lei federal, mas a falta de informação e a distância física dos cartórios ainda são barreiras."
+    ],
+    "keywords": [
+      "Sub-registro civil",
+      "Cidadãos invisíveis",
+      "Acesso a direitos fundamentais",
+      "Vulnerabilidade socioeconômica",
+      "Cidadania mutilada"
+    ]
+  },
+  {
+    "id": "enem-2020",
+    "title": "O estigma associado às doenças mentais na sociedade brasileira",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Aprofundamento sobre o preconceito, a falta de acolhimento e as dificuldades de acesso a tratamentos psicológicos e psiquiátricos no Brasil.",
+    "texts": [
+      "Texto 1: Transtornos como ansiedade, depressão e burnout ainda são rotulados com frequência como fraqueza ou falta de esforço, afastando indivíduos da busca por auxílio.",
+      "Texto 2: O Brasil lidera índices mundiais de prevalência de ansiedade, mas a Rede de Atenção Psicossocial (CAPS) enfrenta gargalos de financiamento e cobertura territorial.",
+      "Texto 3: Campanhas de conscientização e a desmistificação de tabus em escolas e ambientes de trabalho são indispensáveis para combater o sofrimento psíquico."
+    ],
+    "keywords": [
+      "Saúde mental",
+      "Estigma e psicofobia",
+      "CAPS e SUS",
+      "Empatia coletiva",
+      "Michel Foucault"
+    ]
+  },
+  {
+    "id": "enem-2019",
+    "title": "Democratização do acesso ao cinema no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Reflexão sobre a concentração geográfica e econômica das salas de cinema nas grandes capitais e shopping centers, privando grande parcela da população desse bem cultural.",
+    "texts": [
+      "Texto 1: Mais de 80% dos municípios brasileiros não possuem nenhuma sala de exibição cinematográfica regular.",
+      "Texto 2: O cinema educa a sensibilidade, amplia horizontes estéticos e fomenta o senso crítico da juventude.",
+      "Texto 3: Preços elevados de ingressos e falta de espaços públicos municipais de projeção reforçam o elitismo cultural."
+    ],
+    "keywords": [
+      "Democratização cultural",
+      "Segregação socioespacial",
+      "Sétima arte",
+      "Artigos 215 e 216 da CF/88",
+      "Pierre Bourdieu"
+    ]
+  },
+  {
+    "id": "enem-2018",
+    "title": "Manipulação do comportamento do usuário pelo controle de dados na internet",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Debate sobre o uso de algoritmos, coleta massiva de dados pessoais e bolhas ideológicas criadas pelas redes sociais.",
+    "texts": [
+      "Texto 1: Plataformas digitais analisam cliques e preferências para moldar o consumo, escolhas políticas e padrões de comportamento através de feeds hiperpersonalizados.",
+      "Texto 2: O aprisionamento em bolhas de informação limita o contato com a alteridade e fragiliza o debate democrático plural.",
+      "Texto 3: A Lei Geral de Proteção de Dados (LGPD) e o Marco Civil da Internet representam avanços jurídicos cruciais na defesa da privacidade."
+    ],
+    "keywords": [
+      "Capitalismo de vigilância",
+      "Shoshana Zuboff",
+      "Bolhas algorítmicas",
+      "LGPD",
+      "Autonomia crítica"
+    ]
+  },
+  {
+    "id": "enem-2017",
+    "title": "Desafios para a formação educacional de surdos no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Análise sobre as barreiras na alfabetização, carência de intérpretes de Libras e desafios de inclusão escolar para a comunidade surda.",
+    "texts": [
+      "Texto 1: A Lei 10.436/02 reconheceu a Libras como língua oficial da comunidade surda brasileira.",
+      "Texto 2: A inclusão em salas de aula regulares sem professores bilíngues capacitados muitas vezes resulta em isolamento pedagógico.",
+      "Texto 3: Escolas bilíngues (Libras como primeira língua e Português escrito como segunda) são reivindicações históricas dos movimentos surdos."
+    ],
+    "keywords": [
+      "Libras",
+      "Educação bilíngue",
+      "Inclusão real",
+      "Acessibilidade comunicacional",
+      "Diversidade linguística"
+    ]
+  },
+  {
+    "id": "enem-2016",
+    "title": "Caminhos para combater a intolerância religiosa no Brasil",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Discussão acerca do preconceito, da violência e da destruição de templos e terreiros, violando o princípio constitucional de laicidade e liberdade de crença.",
+    "texts": [
+      "Texto 1: O Brasil é um Estado Laico segundo a Carta de 1988, garantindo a livre manifestação religiosa a todos os cidadãos.",
+      "Texto 2: As religiões de matriz africana (Candomblé e Umbanda) concentram a grande maioria das denúncias de agressões físicas e verbais no Disque 100.",
+      "Texto 3: O combate à intolerância passa pelo diálogo inter-religioso, fiscalização penal severa e pedagogia da diversidade nas escolas."
+    ],
+    "keywords": [
+      "Estado Laico",
+      "Liberdade de culto",
+      "Racismo religioso",
+      "Direitos humanos",
+      "Alteridade"
+    ]
+  },
+  {
+    "id": "enem-2015",
+    "title": "A persistência da violência contra a mulher na sociedade brasileira",
+    "category": "ENEM Oficial (2015-2024)",
+    "description": "Causas e consequências do feminicídio, da violência doméstica e das agressões silenciosas sustentadas pela cultura patriarcal e machista.",
+    "texts": [
+      "Texto 1: A Lei Maria da Penha (2006) e a Lei do Feminicídio (2015) tipificaram e puniram severamente agressões de gênero.",
+      "Texto 2: O Brasil registra alarmantes índices de violência física, psicológica, patrimonial e sexual contra mulheres, em sua maioria negras e periféricas.",
+      "Texto 3: A dependência econômica e a negligência institucional muitas vezes desestimulam denúncias por parte das vítimas."
+    ],
+    "keywords": [
+      "Patriarcado estrutural",
+      "Lei Maria da Penha",
+      "Feminicídio",
+      "Machismo cotidiano",
+      "Rede de proteção à mulher"
+    ]
+  },
+  {
+    "id": "aposta-ia-trabalho",
+    "title": "Inteligência Artificial e o futuro do trabalho no Brasil",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "A automação acelerada por IA generativa, a substituição de funções operacionais e cognitivas e a urgência de requalificação profissional e regulação ética.",
+    "texts": [
+      "Texto 1: Relatórios internacionais estimam que até 40% dos postos de trabalho globais serão profundamente impactados ou extintos por sistemas de inteligência artificial nos próximos anos.",
+      "Texto 2: No Brasil, a desigualdade de acesso ao letramento digital de ponta ameaça ampliar o abismo entre profissionais altamente qualificados e trabalhadores precarizados.",
+      "Texto 3: Debates no Congresso Nacional discutem o Marco Legal da Inteligência Artificial (PL 2338/23), buscando equilibrar inovação com direitos trabalhistas e dignidade humana."
+    ],
+    "keywords": [
+      "Automação e IA",
+      "Requalificação profissional",
+      "Marco Legal da IA",
+      "Domenico De Masi (Ócio Criativo)",
+      "Dignidade do trabalhador"
+    ]
+  },
+  {
+    "id": "aposta-educacao-midiatica",
+    "title": "A importância da educação midiática no combate à desinformação e fake news",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "O fortalecimento do pensamento crítico cidadão nas escolas e comunidades como principal barreira contra notícias fraudulentas, boatos de saúde e manipulação política.",
+    "texts": [
+      "Texto 1: A disseminação deliberada de fake news e conteúdos sintéticos manipulados contamina debates cívicos, enfraquece a confiança na ciência e gera linchamentos na esfera digital.",
+      "Texto 2: A Educação Midiática capacita o cidadão a analisar a intencionalidade dos discursos, checar fontes originais, decodificar algoritmos e praticar a cidadania digital responsável.",
+      "Texto 3: A Base Nacional Comum Curricular (BNCC) já inclui o campo jornalístico-midiático como habilidade obrigatória, mas a carência de formação docente continuada ainda dificulta sua aplicação prática."
+    ],
+    "keywords": [
+      "Letramento midiático",
+      "Pós-verdade",
+      "Checagem de fatos",
+      "BNCC e cidadania",
+      "Habermas (Esfera Pública)"
+    ]
+  },
+  {
+    "id": "aposta-uberizacao",
+    "title": "A precarização do trabalho e os impactos da uberização na economia brasileira",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "O crescimento de milhões de trabalhadores vinculados a plataformas de entrega e transporte, a perda de garantias previdenciárias e o debate sobre a CLT.",
+    "texts": [
+      "Texto 1: Mais de 1,6 milhão de brasileiros têm em aplicativos de entrega ou transporte sua principal fonte de renda, submetendo-se a jornadas de 12 a 14 horas sem 13º salário ou auxílio-acidente.",
+      "Texto 2: O discurso do empreendedorismo de si mesmo mascara a transferência de todos os riscos operacionais, custos do veículo e desgastes de saúde para o trabalhador.",
+      "Texto 3: Projetos de lei e decisões dos tribunais trabalhistas buscam instituir rede mínima de proteção social, previdência e remuneração mínima por hora para esses profissionais."
+    ],
+    "keywords": [
+      "Uberização",
+      "Precarização laboral",
+      "Seguridade social",
+      "Byung-Chul Han (Autoexploração)",
+      "Artigo 7º da CF/88"
+    ]
+  },
+  {
+    "id": "aposta-bets-2026",
+    "title": "A regulamentação das apostas esportivas (bets) e os impactos do vício em jogos na economia das famílias",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "A proliferação desenfreada de casas de apostas online, o endividamento acelerado de famílias vulneráveis e a ludopatia como grave questão de saúde pública.",
+    "texts": [
+      "Texto 1: Dados do Banco Central e de entidades do comércio revelaram que dezenas de bilhões de reais do orçamento popular foram drenados para plataformas de apostas online, comprometendo gastos básicos com alimentação e farmácia.",
+      "Texto 2: A Organização Mundial da Saúde (OMS) classifica a ludopatia como transtorno patológico, desencadeando quadros severos de depressão, ansiedade e desestruturação familiar.",
+      "Texto 3: A Lei 14.790/23 regulamentou o setor no Brasil, impondo restrições de publicidade, tributação e mecanismos de proteção para menores, exigindo fiscalização rigorosa."
+    ],
+    "keywords": [
+      "Ludopatia",
+      "Endividamento das famílias",
+      "Lei 14.790/23",
+      "Publicidade predatória",
+      "Saúde mental e financeira"
+    ]
+  },
+  {
+    "id": "aposta-lixo-eletronico",
+    "title": "O descarte de lixo eletrônico e a urgência da sustentabilidade tecnológica no Brasil",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "O rápido ciclo de obsolescência programada de celulares, computadores e eletroeletrônicos, e os riscos de contaminação do solo e das águas por metais pesados.",
+    "texts": [
+      "Texto 1: O Brasil é o maior produtor de lixo eletrônico da América Latina, gerando mais de 2 milhões de toneladas ao ano, mas recicla menos de 3% desse volume.",
+      "Texto 2: Metais tóxicos como chumbo, mercúrio e cádmio, quando descartados no lixo comum, infiltram-se nos lençóis freáticos e geram doenças neurológicas e renais.",
+      "Texto 3: A ampliação da logística reversa, com postos de coleta obrigatórios por fabricantes e incentivo a cooperativas especializadas, é basilar para uma economia circular e limpa."
+    ],
+    "keywords": [
+      "Lixo eletrônico (e-waste)",
+      "Obsolescência programada",
+      "Logística reversa",
+      "Economia circular",
+      "Poluição por metais pesados"
+    ]
+  },
+  {
+    "id": "aposta-telas-jovens-2026",
+    "title": "O impacto do excesso de telas e algoritmos nas relações sociais da juventude",
+    "category": "Apostas 2026 • Tecnologia & Trabalho",
+    "description": "A dependência de smartphones, a nomofobia, o isolamento presencial e a deterioração da capacidade de atenção contínua dos jovens.",
+    "texts": [
+      "Texto 1: Adolescentes passam em média mais de 6 horas diárias conectados a redes sociais de vídeos curtos, projetados para reter a atenção por picos de dopamina.",
+      "Texto 2: Estudos neurológicos apontam perda de foco, distúrbios do sono e empobrecimento das interações face a face em ambiente escolar.",
+      "Texto 3: Países debatem a restrição do uso de celulares dentro das salas de aula como forma de resgatar o convívio comunitário e a concentração pedagógica."
+    ],
+    "keywords": [
+      "Nomofobia",
+      "Economia da atenção",
+      "Sociedade do cansaço (Byung-Chul Han)",
+      "Convívio interpessoal",
+      "Saúde digital"
+    ]
+  },
+  {
+    "id": "aposta-crise-climatica-periferias",
+    "title": "Crise climática e os impactos dos desastres socioambientais nas periferias",
+    "category": "Apostas 2026 • Meio Ambiente & Cidades",
+    "description": "Como eventos extremos (enchentes históricas, ondas de calor sufocantes e deslizamentos) atingem de forma devastadora e desproporcional as populações periféricas e favelas.",
+    "texts": [
+      "Texto 1: Relatórios científicos apontam que desastres climáticos resultam do encontro entre fenômenos extremos e a histórica negligência urbanística estatal em encostas e várzeas de rios.",
+      "Texto 2: O conceito de racismo ambiental elucida que as populações negras, indígenas e de baixa renda residem nos territórios mais desprovidos de drenagem e saneamento, arcando com as maiores perdas.",
+      "Texto 3: Construir cidades resilientes requer investimentos prioritários do Fundo Clima em habitação popular segura, reflorestamento urbano e sistemas de alerta preventivo por satélite e sirenes comunitárias."
+    ],
+    "keywords": [
+      "Racismo ambiental",
+      "Justiça climática",
+      "Cidades resilientes",
+      "Vulnerabilidade socioespacial",
+      "Milton Santos"
+    ]
+  },
+  {
+    "id": "aposta-mobilidade-urbana",
+    "title": "Desafios da mobilidade urbana sustentável nas grandes capitais brasileiras",
+    "category": "Apostas 2026 • Meio Ambiente & Cidades",
+    "description": "O modelo rodoviarista centrado no automóvel particular, o colapso do trânsito, a poluição do ar e as horas diárias perdidas por trabalhadores em transportes públicos lotados.",
+    "texts": [
+      "Texto 1: Em grandes metrópoles, trabalhadores das periferias passam em média 2 a 4 horas diárias no deslocamento até seus empregos, gerando exaustão física crônica e prejuízos à saúde.",
+      "Texto 2: O transporte coletivo elétrico, a malha ferroviária e ciclofaixas integradas são eixos estratégicos para descarbonizar as cidades e democratizar o direito de ir e vir.",
+      "Texto 3: A Política Nacional de Mobilidade Urbana (Lei 12.587/12) prioriza modos não motorizados e o transporte público coletivo sobre o individual, mas ainda esbarra na carência de subsídios públicos estruturais."
+    ],
+    "keywords": [
+      "Mobilidade ativa",
+      "Tarifa zero e transporte público",
+      "Rodoviarismo",
+      "Direito à Cidade (David Harvey)",
+      "Descarbonização urbana"
+    ]
+  },
+  {
+    "id": "aposta-saneamento-hidrico",
+    "title": "Crise hídrica e os desafios para o saneamento básico universal no Brasil",
+    "category": "Apostas 2026 • Meio Ambiente & Cidades",
+    "description": "A persistência de mais de 30 milhões de brasileiros sem acesso à água tratada e quase 100 milhões sem coleta de esgoto, agravada por estiagens e poluição de bacias.",
+    "texts": [
+      "Texto 1: A ausência de saneamento básico é a principal causa de internações hospitalares infantis por doenças de veiculação hídrica (diarreias e parasitoses) no SUS.",
+      "Texto 2: A poluição de mananciais por esgoto sem tratamento e agrotóxicos reduz a disponibilidade de água potável e encarece brutalmente as tarifas de tratamento para os lares mais pobres.",
+      "Texto 3: O Marco Legal do Saneamento Básico fixou como meta universalizar água tratada para 99% e coleta/tratamento de esgoto para 90% da população até 2033."
+    ],
+    "keywords": [
+      "Saneamento universal",
+      "Direito humano à água",
+      "Marco Legal do Saneamento",
+      "Segurança hídrica",
+      "Saúde preventiva"
+    ]
+  },
+  {
+    "id": "aposta-residuos-solidos-2026",
+    "title": "Desafios para a gestão do lixo e valorização dos catadores de materiais recicláveis",
+    "category": "Apostas 2026 • Meio Ambiente & Cidades",
+    "description": "A persistência de lixões a céu aberto, o baixo índice de reciclagem e o papel insubstituível, porém invisibilizado, das cooperativas de catadores de recicláveis.",
+    "texts": [
+      "Texto 1: Menos de 4% dos resíduos sólidos urbanos produzidos no Brasil são reciclados, enquanto os lixões ilegais poluem lençóis freáticos com chorume tóxico e emitem gás metano.",
+      "Texto 2: Os catadores de materiais recicláveis respondem por mais de 80% de toda a massa reaproveitada pela indústria de embalagens, operando sem equipamentos adequados e sem direitos previdenciários.",
+      "Texto 3: A Política Nacional de Resíduos Sólidos (PNRS) exige a contratação remunerada de cooperativas pelo poder público municipal, unindo ecologia e justiça distributiva."
+    ],
+    "keywords": [
+      "Economia circular",
+      "PNRS (Lei 12.305/10)",
+      "Catadores de recicláveis",
+      "Logística reversa",
+      "Justiça socioambiental"
+    ]
+  },
+  {
+    "id": "aposta-fome-seguranca-alimentar",
+    "title": "Caminhos para combater a insegurança alimentar e o desperdício de alimentos no Brasil",
+    "category": "Apostas 2026 • Meio Ambiente & Cidades",
+    "description": "O paradoxo de um dos maiores exportadores mundiais de grãos e carnes conviver com milhões de cidadãos em situação de fome e insegurança alimentar grave.",
+    "texts": [
+      "Texto 1: Enquanto toneladas de comida própria para consumo são descartadas diariamente ao longo da cadeia produtiva e nos supermercados, lares vulneráveis sofrem com a carência calórica.",
+      "Texto 2: O direito à alimentação adequada está previsto no Artigo 6º da Constituição, dependendo do fortalecimento da agricultura familiar e de cozinhas solidárias.",
+      "Texto 3: Josué de Castro, clássico autor de Geografia da Fome, demonstrou que a fome no Brasil não é um fenômeno geográfico ou biológico, mas fruto da concentração de terras e desigualdade social."
+    ],
+    "keywords": [
+      "Insegurança alimentar",
+      "Josué de Castro (Geografia da Fome)",
+      "Agricultura familiar",
+      "Cozinhas solidárias",
+      "Desperdício de alimentos"
+    ]
+  },
+  {
+    "id": "aposta-vacinacao-infantil",
+    "title": "Os desafios da vacinação e a queda na cobertura vacinal infantil no Brasil",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "O retorno perigoso de doenças erradicadas (como sarampo e poliomielite), o avanço de discursos antivacina nas redes e as estratégias para resgatar o prestígio do PNI.",
+    "texts": [
+      "Texto 1: O Brasil já foi modelo mundial de imunização em massa pelo Programa Nacional de Imunizações (PNI). Porém, coberturas vacinais fundamentais despencaram para níveis inferiores a 75%.",
+      "Texto 2: A circulação de boatos e fake news sobre a eficácia de vacinas, somada à falsa sensação de segurança por não ver mais pessoas doentes, enfraqueceu a adesão popular.",
+      "Texto 3: O Estatuto da Criança e do Adolescente (ECA - Art. 14) determina a obrigatoriedade da vacinação nos casos recomendados pelo Ministério da Saúde, sendo dever dos pais e do Estado zelar pela proteção da infância."
+    ],
+    "keywords": [
+      "Programa Nacional de Imunizações (PNI)",
+      "Cobertura vacinal infantil",
+      "Hesitação vacinal",
+      "ECA e proteção integral",
+      "Oswaldo Cruz (Revolta da Vacina)"
+    ]
+  },
+  {
+    "id": "aposta-doacao-orgaos-2026",
+    "title": "Doação de órgãos e tecidos no Brasil: superando a desinformação",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "O contraste entre o maior sistema público de transplantes do mundo no SUS e as altas taxas de recusa familiar causadas pela falta de informação sobre morte encefálica e luto.",
+    "texts": [
+      "Texto 1: O Brasil possui o maior sistema público de transplantes de órgãos do planeta: mais de 95% dos procedimentos cirúrgicos são integralmente custeados pelo SUS.",
+      "Texto 2: Apesar da excelência técnica médica, mais de 43% das famílias de potenciais doadores recusam a doação após a confirmação de morte encefálica, mantendo mais de 40 mil pessoas em filas de espera.",
+      "Texto 3: Pela lei brasileira, a doação depende exclusivamente da autorização expressa dos familiares. Conversar sobre o tema em vida e humanizar a comunicação hospitalar são medidas que salvam vidas."
+    ],
+    "keywords": [
+      "Transplantes no SUS",
+      "Doação de órgãos",
+      "Morte encefálica",
+      "Acolhimento familiar",
+      "Solidariedade cidadã"
+    ]
+  },
+  {
+    "id": "aposta-gordofobia-estetica",
+    "title": "Caminhos para combater a gordofobia e a pressão estética na era das redes",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "O preconceito estrutural contra corpos gordos em hospitais, escolas e trabalho, amplificado pelo culto a filtros digitais inalcançáveis e pelo aumento de transtornos alimentares.",
+    "texts": [
+      "Texto 1: A gordofobia se manifesta na exclusão profissional, falta de assentos adequados e negligência médica, quando profissionais atribuem qualquer sintoma clínico exclusivamente ao peso corporal.",
+      "Texto 2: Nas redes sociais, o consumo de imagens hiperfiltradas e o estímulo a dietas extremas disparam casos de anorexia, bulimia e dismorfia corporal entre jovens.",
+      "Texto 3: A filósofa Naomi Wolf, em O Mito da Beleza, demonstra como padrões estéticos rígidos funcionam como forma de controle social, sendo urgente desvincular saúde de padrões inatingíveis."
+    ],
+    "keywords": [
+      "Gordofobia",
+      "Dismorfia corporal",
+      "Pressão estética",
+      "Transtornos alimentares",
+      "Naomi Wolf (O Mito da Beleza)"
+    ]
+  },
+  {
+    "id": "aposta-solidao-isolamento",
+    "title": "O impacto da solidão e do isolamento social na saúde pública moderna",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "A epidemia silenciosa de solidão entre jovens e idosos, o enfraquecimento das redes comunitárias de afeto e seus reflexos diretos em depressão e problemas cardiovasculares.",
+    "texts": [
+      "Texto 1: A Organização Mundial da Saúde (OMS) declarou a solidão como uma ameaça global de saúde pública tão nociva quanto o tabagismo, associada ao risco elevado de infartos e declínio cognitivo.",
+      "Texto 2: Na modernidade líquida de Zygmunt Bauman, conexões virtuais rápidas proliferam nas telas, mas falham em construir laços profundos de escuta e acolhimento presencial.",
+      "Texto 3: Criar centros comunitários de lazer, hortas coletivas e programas de apoio psicológico nas unidades básicas de saúde são caminhos testados com sucesso no combate ao isolamento."
+    ],
+    "keywords": [
+      "Solidão contemporânea",
+      "Zygmunt Bauman (Modernidade Líquida)",
+      "Isolamento social",
+      "Saúde mental comunitária",
+      "Laços de afeto"
+    ]
+  },
+  {
+    "id": "aposta-violencia-obstetrica",
+    "title": "Caminhos para combater a violência obstétrica e garantir o parto humanizado no Brasil",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "A persistência de abusos verbais, manobras médicas sem consentimento e desumanização durante a gestação e o parto, atingindo desproporcionalmente mulheres vulneráveis.",
+    "texts": [
+      "Texto 1: Estudos da Fiocruz revelam que uma em cada quatro brasileiras sofre algum tipo de violência obstétrica (como episiotomias sem anestesia, recusa de alívio da dor ou desrespeito à autonomia).",
+      "Texto 2: A taxa de partos cesáreos no Brasil supera 55% no SUS e 85% no setor privado, muito acima do teto recomendado pela OMS (10% a 15%), expondo mães e bebês a riscos desnecessários.",
+      "Texto 3: A presença garantida de acompanhante por lei (Lei 11.108/05) e a valorização de enfermeiras obstétricas e doulas asseguram maior segurança e dignidade à mulher."
+    ],
+    "keywords": [
+      "Violência obstétrica",
+      "Parto humanizado",
+      "Direitos reprodutivos",
+      "Lei do Acompanhante",
+      "Humanização no SUS"
+    ]
+  },
+  {
+    "id": "aposta-saude-mental-jovens",
+    "title": "Caminhos para promover o bem-estar psicológico e a saúde mental dos jovens",
+    "category": "Apostas 2026 • Saúde & Sociedade",
+    "description": "Discussão acerca do aumento da ansiedade e depressão entre adolescentes em tempos de redes sociais, solidão e cobranças por aprovação.",
+    "texts": [
+      "Texto 1: A comparação constante em redes sociais intensifica sentimentos de frustração, solidão e baixa autoestima na juventude.",
+      "Texto 2: Na literatura contemporânea, as obras da escritora britânica Alice Oseman (como Heartstopper, Solitaire e Radio Silence) retratam com extrema sensibilidade a vulnerabilidade emocional dos jovens e a urgência de redes de apoio sem julgamentos.",
+      "Texto 3: A presença de psicólogos e assistentes sociais nas escolas públicas (Lei 13.935/19) é um avanço crucial para acolher os alunos antes do agravamento das crises."
+    ],
+    "keywords": [
+      "Alice Oseman (Heartstopper)",
+      "Ansiedade juvenil",
+      "Lei 13.935/19",
+      "Acolhimento escolar",
+      "Rede de apoio e escuta"
+    ]
+  },
+  {
+    "id": "aposta-evasao-escolar-2026",
+    "title": "Evasão escolar no Ensino Médio e caminhos para permanência estudantil",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "A saída precoce de jovens da escola pressionados pela necessidade de complementar a renda familiar, desmotivação e as políticas públicas de permanência.",
+    "texts": [
+      "Texto 1: Dados do Censo Escolar revelam que quase meio milhão de jovens abandonam o Ensino Médio todos os anos no Brasil, alimentando o ciclo intergeracional da pobreza.",
+      "Texto 2: O programa Pé-de-Meia visa frear a evasão oferecendo auxílio financeiro mensal a estudantes de famílias de baixa renda matriculados na rede pública regular.",
+      "Texto 3: Pedagogos apontam que além da ajuda financeira, a escola precisa oferecer ensino integral atrativo, laboratórios modernos, projetos de vida e valorização docente."
+    ],
+    "keywords": [
+      "Evasão escolar",
+      "Programa Pé-de-Meia",
+      "Permanência estudantil",
+      "Paulo Freire (Pedagogia da Autonomia)",
+      "Educação integral"
+    ]
+  },
+  {
+    "id": "aposta-violencia-escolas",
+    "title": "Violência nas escolas e a construção de uma cultura de paz e mediação de conflitos",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "O surgimento de episódios graves de agressão física e discurso de ódio nas escolas, e a urgência de equipes multidisciplinares com foco em mediação e acolhimento.",
+    "texts": [
+      "Texto 1: O ambiente escolar tem sofrido impactos da radicalização de jovens em fóruns extremistas da internet, bullying implacável e desassistência socioemocional.",
+      "Texto 2: Medidas meramente punitivas ou policiais não atacam as causas profundas do problema, sendo necessária a escuta ativa, círculos de justiça restaurativa e apoio psicológico.",
+      "Texto 3: A efetivação da Lei 13.935/19, que assegura psicólogos e assistentes sociais nas escolas públicas, é considerada prioritária para antecipar crises e construir ambientes seguros."
+    ],
+    "keywords": [
+      "Cultura de paz",
+      "Mediação restaurativa",
+      "Lei 13.935/19",
+      "Bullying e extremismo",
+      "Acolhimento socioemocional"
+    ]
+  },
+  {
+    "id": "aposta-neurodivergentes-2026",
+    "title": "Desafios para a inclusão escolar e profissional de pessoas neurodivergentes no Brasil",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "A garantia de diagnósticos acessíveis, adaptações curriculares e respeito às particularidades de pessoas com Autismo (TEA), TDAH e altas habilidades.",
+    "texts": [
+      "Texto 1: A Lei Berenice Piana (12.764/12) instituiu a Política Nacional de Proteção dos Direitos da Pessoa com TEA, assegurando direito a acompanhante pedagógico especializado.",
+      "Texto 2: Famílias atípicas enfrentam barreiras burocráticas, custos com terapias e recusa velada de matrículas em estabelecimentos de ensino regulares.",
+      "Texto 3: No mercado corporativo, a neurodiversidade deve ser compreendida não como deficiência limitante, mas como perfil cognitivo com talentos e potenciais autênticos."
+    ],
+    "keywords": [
+      "Neurodiversidade",
+      "Lei Berenice Piana",
+      "Inclusão educacional",
+      "Acessibilidade atitudinal",
+      "Adaptações razoáveis"
+    ]
+  },
+  {
+    "id": "aposta-fuga-cerebros-ciencia",
+    "title": "A valorização da produção científica nacional e o combate à fuga de cérebros",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "A saída de pesquisadores, mestres e doutores brasileiros para centros estrangeiros por falta de bolsas dignas e infraestrutura de pesquisa.",
+    "texts": [
+      "Texto 1: Cortes históricos em agências de fomento como CNPq e Capes desestimularam uma geração de jovens cientistas e engenheiros, provocando êxodo para o exterior.",
+      "Texto 2: A soberania nacional depende da ciência: vacinas contra epidemias tropicais, transição energética e biotecnologia amazônica exigem cérebros atuando no país.",
+      "Texto 3: Aumentar o investimento em pesquisa para padrões internacionais e desburocratizar a importação de insumos laboratoriais são exigências urgentes para reter talentos."
+    ],
+    "keywords": [
+      "Fuga de cérebros",
+      "Soberania científica",
+      "CNPq e Capes",
+      "Inovação nacional",
+      "Investimento em pesquisa"
+    ]
+  },
+  {
+    "id": "aposta-etarismo-idosos",
+    "title": "O combate ao etarismo e a valorização da pessoa idosa no mercado de trabalho e na família",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "O envelhecimento populacional acelerado do Brasil e a necessidade de combater o preconceito de idade, a exclusão produtiva e o abandono de pessoas mais velhas.",
+    "texts": [
+      "Texto 1: O Censo do IBGE revelou que o número de brasileiros com 60 anos ou mais superou 32 milhões, confirmando uma transição demográfica acelerada.",
+      "Texto 2: O etarismo desvaloriza a experiência profissional de idosos e os relega a situações de desamparo material e afetivo, violando direitos fundamentais.",
+      "Texto 3: O Estatuto da Pessoa Idosa (Lei 10.741/03) estabelece prioridades e pune a discriminação, exigindo a expansão de programas de letramento digital e centros de convivência."
+    ],
+    "keywords": [
+      "Etarismo",
+      "Transição demográfica",
+      "Estatuto da Pessoa Idosa",
+      "Cuidado intergeracional",
+      "Envelhecimento ativo"
+    ]
+  },
+  {
+    "id": "aposta-exploracao-infantil-digital",
+    "title": "Caminhos para combater a exploração sexual e a violência contra crianças no ambiente digital",
+    "category": "Apostas 2026 • Educação & Cidadania",
+    "description": "O aliciamento de menores, vazamento de materiais íntimos e crimes cibernéticos facilitados pela ausência de moderação eficaz em plataformas digitais.",
+    "texts": [
+      "Texto 1: Denúncias de crimes cibernéticos contra crianças e adolescentes em redes sociais e jogos online tiveram aumento expressivo segundo a SaferNet Brasil.",
+      "Texto 2: A falta de controle de idade e a criptografia em grupos abertos facilitam a ação criminosa de predadores sexuais e a disseminação de conteúdos ilegais.",
+      "Texto 3: A Constituição (Art. 227) estabelece que é dever da família, da sociedade e do Estado assegurar com prioridade absoluta os direitos da infância e juventude."
+    ],
+    "keywords": [
+      "Prioridade absoluta (Art. 227)",
+      "Aliciamento digital (Grooming)",
+      "SaferNet Brasil",
+      "ECA e Lei Henry Borel",
+      "Segurança nas plataformas"
+    ]
+  },
+  {
+    "id": "aposta-cultura-rock-resistencia",
+    "title": "A música e a arte como instrumentos de resistência e transformação social",
+    "category": "Apostas 2026 • Cultura & Sociedade",
+    "description": "O poder da expressão artística, do rock clássico e da literatura jovem no enfrentamento ao conservadorismo autoritário e no florescimento de novas ideias.",
+    "texts": [
+      "Texto 1: Nas décadas de 60 e 70, expoentes da contracultura como The Beatles, David Bowie, Queen e Led Zeppelin contestaram tabus e transformaram canções em hinos de liberdade e união geracional.",
+      "Texto 2: Na cena independente brasileira contemporânea (como a banda autoral Vênere Vai Vênus) e batalhas de rima periféricas, o verso mantém vivo o protesto contra injustiças sociais.",
+      "Texto 3: O Artigo 215 da Constituição Cidadã assegura o pleno exercício dos direitos culturais e apoio à difusão das manifestações artísticas populares e independentes."
+    ],
+    "keywords": [
+      "Contracultura e Rock",
+      "Liberdade de expressão",
+      "Artigo 215 da CF/88",
+      "Vênere Vai Vênus",
+      "Theodor Adorno (Teoria Crítica)"
+    ]
+  },
+  {
+    "id": "aposta-cultura-interiorizacao",
+    "title": "A democratização do acesso a bens culturais e equipamentos artísticos no interior do país",
+    "category": "Apostas 2026 • Cultura & Sociedade",
+    "description": "A superação do abismo cultural que concentra teatros, museus, cinemas e centros de convivência artística quase exclusivamente nas capitais do Centro-Sul.",
+    "texts": [
+      "Texto 1: Mais de 90% dos municípios do interior não dispõem de museu, sala pública de teatro ou espaço regular de exposições de arte e patrimônio histórico.",
+      "Texto 2: Leis de fomento descentralizado como a Lei Paulo Gustavo e a Política Nacional Aldir Blanc canalizaram verbas históricas diretamente para pequenas cidades.",
+      "Texto 3: O acesso à cultura amplia o senso crítico, movimenta a economia criativa local e resgata a identidade e o orgulho das comunidades do interior."
+    ],
+    "keywords": [
+      "Descentralização cultural",
+      "Lei Paulo Gustavo / Aldir Blanc",
+      "Economia criativa",
+      "Patrimônio histórico",
+      "Cidadania cultural"
+    ]
+  },
+  {
+    "id": "aposta-habito-leitura",
+    "title": "A formação do hábito de leitura como instrumento de cidadania no Brasil",
+    "category": "Apostas 2026 • Cultura & Sociedade",
+    "description": "O papel crucial dos livros e da literatura na expansão do vocabulário, do senso crítico, da empatia e da compreensão letrada do mundo.",
+    "texts": [
+      "Texto 1: O sociólogo Antonio Candido, em O Direito à Literatura, defende que a fruição da arte das palavras é uma necessidade humana básica indispensável para humanização do indivíduo.",
+      "Texto 2: A literatura contemporânea (como os romances juvenis de Alice Oseman) tem demonstrado imenso poder de reconectar jovens à leitura de livros físicos, promovendo discussões sobre acolhimento e diversidade.",
+      "Texto 3: Pesquisas indicam que a média de livros lidos por habitante no país permanece estagnada, exigindo bibliotecas públicas atraentes e projetos escolares permanentes de incentivo à leitura."
+    ],
+    "keywords": [
+      "Antonio Candido (O Direito à Literatura)",
+      "Alice Oseman",
+      "Letramento crítico",
+      "Bibliotecas escolares",
+      "Empatia e alteridade"
+    ]
+  },
+  {
+    "id": "aposta-esporte-inclusao",
+    "title": "O papel do esporte como ferramenta de inclusão social e cidadania nas periferias",
+    "category": "Apostas 2026 • Cultura & Sociedade",
+    "description": "O esporte como política preventiva de saúde, resgate de jovens em situação de vulnerabilidade, disciplina cívica e superação de desigualdades.",
+    "texts": [
+      "Texto 1: Projetos esportivos comunitários de artes marciais, futebol, ginástica e skate funcionam como escudos de proteção social contra o aliciamento do crime organizado nas favelas.",
+      "Texto 2: As trajetórias de atletas olímpicos brasileiros oriundos da periferia demonstram a resiliência popular frente à histórica falta de infraestrutura esportiva pública.",
+      "Texto 3: A Carta Magna (Artigo 217) consagra o dever do Estado de fomentar práticas desportivas formais e não formais com prioridade para o desporto educacional."
+    ],
+    "keywords": [
+      "Artigo 217 da CF/88",
+      "Esporte educacional",
+      "Resgate social periférico",
+      "Superação da vulnerabilidade",
+      "Saúde física e mental"
+    ]
+  }
+]
