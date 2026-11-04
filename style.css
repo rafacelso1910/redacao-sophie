@@ -1,0 +1,194 @@
+/* Estilo "Stairway to 1000" • Edição Britânica Rock 60s/70s + Alta Performance ENEM */
+
+:root {
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+  --rock-navy: #0b132b;
+  --rock-slate: #1c2541;
+  --rock-amber: #f59e0b;      /* David Bowie Ziggy Stardust / Queen Gold */
+  --rock-amber-hover: #d97706;
+  --rock-emerald: #10b981;    /* Abbey Road Green */
+  --rock-crimson: #dc2626;    /* Union Jack Accent */
+  --pauta-color: #e2e8f0;
+  --sheet-bg: #ffffff;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Modo Escuro (Estilo Vinil / Noite em Abbey Road) */
+.dark {
+  --bg-main: #080c14;
+  --text-main: #f1f5f9;
+  --pauta-color: #1e293b;
+  --sheet-bg: #0f172a;
+}
+
+/* Folha de Redação Pautada estilo Oficial do ENEM */
+.lined-paper-container {
+  position: relative;
+  background: var(--sheet-bg);
+  border-radius: 1rem;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.dark .lined-paper-container {
+  border-color: #334155;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.lined-paper-gutter {
+  width: 36px;
+  background-color: #f1f5f9;
+  border-right: 2px solid #cbd5e1;
+  color: #64748b;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 28px;
+  text-align: center;
+  user-select: none;
+  padding-top: 14px;
+}
+
+.dark .lined-paper-gutter {
+  background-color: #1e293b;
+  border-right-color: #475569;
+  color: #94a3b8;
+}
+
+.lined-paper-textarea {
+  width: 100%;
+  line-height: 28px;
+  padding: 14px 14px 14px 14px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    var(--pauta-color) 27px,
+    var(--pauta-color) 28px
+  );
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+@media (max-width: 640px) {
+  .lined-paper-gutter {
+    width: 28px;
+    font-size: 0.72rem;
+  }
+  .lined-paper-textarea {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Glassmorphism & Cards Técnicos */
+.rock-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px -1px rgba(15, 23, 42, 0.05);
+}
+
+.dark .rock-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: #1e293b;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Efeito Vinil / Raio Bowie */
+.vinyl-disc {
+  background: radial-gradient(circle, #0f172a 20%, #1e293b 40%, #0f172a 60%, #1e293b 80%, #020617 100%);
+  border: 2px solid #334155;
+}
+
+/* Badge de Rock Britânico */
+.rock-badge {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+/* Barra de rolagem discreta */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+/* Efeitos de Animação */
+@keyframes lightningGlow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+  50% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)); }
+}
+
+.animate-lightning {
+  animation: lightningGlow 2.5s infinite ease-in-out;
+}
+
+/* Responsividade Mobile: Barra Fixa Inferior */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #e2e8f0;
+    padding: 6px 12px;
+  }
+  .dark .mobile-bottom-nav {
+    background: rgba(15, 23, 42, 0.95);
+    border-top-color: #334155;
+  }
+  body {
+    padding-bottom: 72px; /* Espaço para a barra inferior */
+  }
+}
+
+/* Impressão / PDF limpo */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    padding-bottom: 0 !important;
+  }
+  header, nav, .no-print, #settingsModal, #rockNoteModal, #tabButtons, .mobile-bottom-nav {
+    display: none !important;
+  }
+  #resultsSection {
+    display: block !important;
+  }
+  .rock-card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
