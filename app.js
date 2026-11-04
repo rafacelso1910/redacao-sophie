@@ -490,6 +490,11 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     const key = getActiveApiKey();
     const systemPrompt = `Você é um avaliador experiente de redação do ENEM no Brasil, com perfil técnico, pedagógico e objetivo.
 Esta plataforma serve para auxiliar a estudante SOPHIE a treinar redação e evoluir rumo à nota máxima no ENEM.
+NUNCA mencione outro nome além de Sophie ou 'Sabrina Sato'.
+
+REGRA DE SAUDAÇÃO OBRIGATÓRIA NO CAMPO 'personal_message':
+- Se total_score >= 700: comece EXATAMENTE com: "Boa sabrina sato! " e complete com a análise construtiva dos pontos fortes e o que manter.
+- Se total_score < 700: comece EXATAMENTE com: "Eae sophie, " e continue apontando de forma leve e encorajadora onde focar para subir nos próximos treinos.
 
 MATRIZ OFICIAL ENEM (0 a 1000):
 - Cada competência recebe nota de 0 a 200 nos níveis: 0, 40, 80, 120, 160 ou 200.
@@ -682,7 +687,15 @@ Responda ESTRITAMENTE em formato JSON puro, sem blocos markdown extras, seguindo
     animateCounter(resTotalScore, data.total_score);
     resGradeLevel.textContent = data.grade_level;
     resThemeSubtitle.textContent = `Tema: ${themeTitle}`;
-    resPersonalMessage.textContent = data.personal_message;
+    // Garantia de saudacao personalizada da Sophie por pontuacao
+    let msgSophie = (data.personal_message || '').replace(/lari/gi, 'Sophie').replace(/gatinha ruiva/gi, 'Sabrina Sato');
+    msgSophie = msgSophie.replace(/^(olá|oi|eae|boa|parabéns|olá,?\s*sophie!?|eae\s*sophie,?)[\s!,.]*/i, '').trim();
+    if (data.total_score >= 700) {
+      resPersonalMessage.textContent = "Boa sabrina sato! " + msgSophie;
+    } else {
+      resPersonalMessage.textContent = "Eae sophie, " + msgSophie;
+    }
+    data.personal_message = resPersonalMessage.textContent;
 
     renderRadarChart(data.competencies);
 
