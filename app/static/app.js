@@ -1,4 +1,4 @@
-// Lógica do Frontend: "Stairway to 1000 • Feito por Rafael para Sophie ⚡🎸"
+// Lógica do Frontend: Plataforma de Redação ENEM (Sophie)
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- Elementos do DOM ---
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mTabWrite = document.getElementById('mTabWrite');
   const mTabPhoto = document.getElementById('mTabPhoto');
   const mTabHistory = document.getElementById('mTabHistory');
-  const mTabBackstage = document.getElementById('mTabBackstage');
 
   const themeSelect = document.getElementById('themeSelect');
   const customThemeContainer = document.getElementById('customThemeContainer');
@@ -78,16 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modais e Overlays
   const loadingOverlay = document.getElementById('loadingOverlay');
   const loadingStatusText = document.getElementById('loadingStatusText');
-  
-  // Backstage Pass (Rafael & Rock)
-  const rockNoteModal = document.getElementById('rockNoteModal');
-  const rockNoteContent = document.getElementById('rockNoteContent');
-  const rockNoteBand = document.getElementById('rockNoteBand');
-  const btnOpenRockNote = document.getElementById('btnOpenRockNote');
-  const btnOpenRockNoteTop = document.getElementById('btnOpenRockNoteTop');
-  const btnCloseRockNote = document.getElementById('btnCloseRockNote');
-  const btnNewRockNote = document.getElementById('btnNewRockNote');
-  const btnConfirmRockNote = document.getElementById('btnConfirmRockNote');
 
   // Configurações
   const settingsModal = document.getElementById('settingsModal');
@@ -134,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chars = text.length;
     const words = text.trim() ? text.trim().split(/\s+/).length : 0;
     
-    // Contagem de linhas simulando folha real do ENEM
     const linesCount = text ? text.split('\n').reduce((acc, line) => {
       const visualLines = Math.max(1, Math.ceil(line.length / 75));
       return acc + visualLines;
@@ -174,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
       defaultOption.textContent = 'Escolha um tema oficial do ENEM ou atualidade...';
       themeSelect.appendChild(defaultOption);
 
-      // Agrupa os temas por categoria em optgroups organizados
       const groups = {};
       loadedThemes.forEach(theme => {
         const cat = theme.category || 'Outros Temas';
@@ -231,8 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!found) {
       modalThemeTitle.textContent = 'Tema Livre / Personalizado';
-      modalThemeDesc.textContent = 'Nenhum texto motivador cadastrado para este tema. Use referências de história, filosofia ou arte para contextualizar sua introdução!';
-      modalThemeTextsList.innerHTML = '<div class="p-3.5 bg-slate-900 rounded-xl text-xs text-slate-300 border border-slate-800">Dica do Rafa: No D1, lembre-se de fundamentar o problema com um repertório legitimado (como Teoria Crítica de Adorno ou Contrato Social de Locke). ⚡</div>';
+      modalThemeDesc.textContent = 'Nenhum texto motivador cadastrado para este tema. Utilize referências de história, filosofia, sociologia ou legislação para contextualizar sua introdução.';
+      modalThemeTextsList.innerHTML = '<div class="p-3.5 bg-slate-900 rounded-xl text-xs text-slate-300 border border-slate-800">Dica: Nos parágrafos de desenvolvimento, lembre-se de fundamentar sua argumentação com um repertório sociocultural legitimado e produtivo.</div>';
       modalThemeKeywords.innerHTML = '<span class="px-2.5 py-1 bg-slate-800 text-amber-400 rounded-lg text-xs font-semibold"># Tema Livre</span>';
     } else {
       modalThemeTitle.textContent = found.title;
@@ -258,18 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 5. Alternar Abas (Desktop & Mobile) ---
   function switchTab(tabKey) {
-    // Esconde todos
     tabWriteContent.classList.add('hidden');
     tabPhotoContent.classList.add('hidden');
     tabHistoryContent.classList.add('hidden');
 
-    // Desativa estilos de abas desktop
     [tabWriteBtn, tabPhotoBtn, tabHistoryBtn].forEach(b => {
       b.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-md', 'shadow-amber-500/20');
       b.classList.add('bg-slate-800', 'text-slate-300');
     });
 
-    // Desativa estilos de abas mobile
     [mTabWrite, mTabPhoto, mTabHistory].forEach(mb => {
       mb.classList.remove('text-amber-400', 'font-bold');
       mb.classList.add('text-slate-400');
@@ -304,7 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
   mTabWrite.addEventListener('click', () => switchTab('write'));
   mTabPhoto.addEventListener('click', () => switchTab('photo'));
   mTabHistory.addEventListener('click', () => switchTab('history'));
-  mTabBackstage.addEventListener('click', () => openRockNote());
 
   // --- 6. Redação Modelo & Limpar ---
   btnLoadExample.addEventListener('click', () => {
@@ -323,7 +306,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
   });
 
   btnClearText.addEventListener('click', () => {
-    if (confirm('Sophie, tem certeza de que deseja limpar o texto da redação?')) {
+    if (confirm('Tem certeza de que deseja limpar o texto da redação?')) {
       essayText.value = '';
       updateEssayStats();
     }
@@ -420,7 +403,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       cameraVideo.srcObject = stream;
     } catch (err) {
       console.error('Erro na câmera:', err);
-      alert('Não foi possível acessar a câmera do navegador. Use o botão "Tirar Foto com a Câmera do Celular" ou selecione da galeria!');
+      alert('Não foi possível acessar a câmera do navegador. Use o botão "Tirar Foto com a Câmera do Celular" ou selecione da galeria.');
       cameraContainer.classList.add('hidden');
       imagePlaceholder.classList.remove('hidden');
     }
@@ -459,22 +442,21 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     }, 'image/jpeg', 0.95);
   });
 
-  // --- 9. Som e Confetes com Estilo Rock ---
-  function playRockChime(isHighScore = false) {
+  // --- 9. Efeito Sonoro Suave e Confetes ---
+  function playSuccessChime(isHighScore = false) {
     try {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
 
-      // Acorde harmônico enérgico estilo power chord limpo
-      const freqs = isHighScore ? [440, 554.37, 659.25, 880] : [440, 554.37, 659.25]; // Lá maior com oitava
+      const freqs = isHighScore ? [440, 554.37, 659.25, 880] : [440, 554.37, 659.25];
       freqs.forEach((freq, idx) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.08);
         gain.gain.setValueAtTime(0.001, ctx.currentTime + idx * 0.08);
-        gain.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime + idx * 0.08 + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + idx * 0.08 + 0.03);
         gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.08 + 0.7);
         osc.connect(gain);
         gain.connect(ctx.destination);
@@ -482,7 +464,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
         osc.stop(ctx.currentTime + idx * 0.08 + 0.8);
       });
     } catch (e) {
-      // Ignora erro se áudio desativado
+      // Ignora se áudio desativado
     }
   }
 
@@ -491,30 +473,14 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
 
     if (score >= 900) {
       confetti({
-        particleCount: 100,
-        spread: 75,
+        particleCount: 90,
+        spread: 70,
         origin: { y: 0.6 },
-        colors: ['#f59e0b', '#10b981', '#38bdf8', '#ef4444', '#ffffff']
+        colors: ['#f59e0b', '#10b981', '#38bdf8', '#ffffff']
       });
-      setTimeout(() => {
-        confetti({
-          particleCount: 60,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-          colors: ['#f59e0b', '#10b981', '#ffffff']
-        });
-        confetti({
-          particleCount: 60,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
-          colors: ['#f59e0b', '#10b981', '#ffffff']
-        });
-      }, 300);
     } else if (score >= 700) {
       confetti({
-        particleCount: 50,
+        particleCount: 45,
         spread: 55,
         origin: { y: 0.6 },
         colors: ['#f59e0b', '#10b981']
@@ -524,11 +490,11 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
 
   // --- 10. Processo de Análise com IA ---
   const loadingMessages = [
-    "Lendo cada linha da sua redação com o maior carinho... 📖",
-    "Rodando os tokens de IA que o Rafa colocou para avaliar a fundo... ⚡",
-    "Analisando sintaxe, repertório e as 5 competências do ENEM... ✍️",
-    "Auditando os 5 elementos da proposta de intervenção... 🎯",
-    "Quase pronto! Você é muito esforçada, Sophie, e a vaga é sua! 🚀"
+    "Lendo o texto e verificando a estrutura dos parágrafos...",
+    "Avaliando a norma-padrão e os mecanismos de coesão...",
+    "Analisando repertório sociocultural e argumentação...",
+    "Verificando os 5 elementos da proposta de intervenção...",
+    "Finalizando o diagnóstico detalhado pelas 5 competências..."
   ];
 
   function startLoading() {
@@ -554,7 +520,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
   btnAnalyzeText.addEventListener('click', async () => {
     const text = essayText.value.trim();
     if (text.length < 50) {
-      alert('Sophie, por favor escreva pelo menos um parágrafo mais desenvolvido (mínimo de 50 caracteres) para a IA poder avaliar sua argumentação!');
+      alert('Por favor, escreva pelo menos um parágrafo mais desenvolvido (mínimo de 50 caracteres) para realizar a avaliação.');
       return;
     }
 
@@ -587,7 +553,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
   // Análise de Foto / Câmera
   btnAnalyzeImage.addEventListener('click', async () => {
     if (!currentSelectedFile) {
-      alert('Por favor, tire uma foto ou selecione uma imagem da redação antes de enviar!');
+      alert('Por favor, tire uma foto ou selecione uma imagem da redação antes de enviar.');
       return;
     }
 
@@ -628,7 +594,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     resultsSection.classList.remove('hidden');
     resultsSection.scrollIntoView({ behavior: 'smooth' });
 
-    playRockChime(data.total_score >= 900);
+    playSuccessChime(data.total_score >= 900);
     launchConfetti(data.total_score);
 
     animateCounter(resTotalScore, data.total_score);
@@ -638,7 +604,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
 
     renderRadarChart(data.competencies);
 
-    // Pontos Fortes
     resStrengthsList.innerHTML = (data.strengths || []).map(s => `
       <li class="flex items-start">
         <i class="fa-solid fa-check text-emerald-400 mt-0.5 mr-1.5 flex-shrink-0"></i>
@@ -646,7 +611,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </li>
     `).join('');
 
-    // Pontos a Melhorar
     resImprovementsList.innerHTML = (data.improvements || []).map(imp => `
       <li class="flex items-start">
         <i class="fa-solid fa-arrow-trend-up text-amber-400 mt-0.5 mr-1.5 flex-shrink-0"></i>
@@ -654,7 +618,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </li>
     `).join('');
 
-    // Checklist da Proposta de Intervenção (Comp 5)
     const elements = data.intervention_elements || {};
     const checklistMap = [
       { key: 'agente', label: 'Agente' },
@@ -674,7 +637,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       `;
     }).join('');
 
-    // Detalhamento das 5 Competências
     competenciesContainer.innerHTML = (data.competencies || []).map(comp => `
       <div class="border border-slate-800 rounded-2xl p-4 bg-slate-900/80 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
@@ -698,7 +660,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
 
         ${(comp.tips && comp.tips.length > 0) ? `
           <div class="bg-slate-950 p-2.5 rounded-xl text-xs text-slate-300 border border-slate-800">
-            <strong class="text-amber-400">⚡ Estratégia para o 200:</strong>
+            <strong class="text-amber-400">Dicas para alcançar 200 pontos:</strong>
             <ul class="list-disc list-inside mt-1 space-y-1 text-[11px]">
               ${comp.tips.map(t => `<li>${t}</li>`).join('')}
             </ul>
@@ -707,7 +669,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </div>
     `).join('');
 
-    // Análise Parágrafo a Parágrafo
     paragraphsContainer.innerHTML = (data.paragraphs_analysis || []).map(p => `
       <div class="border border-slate-800 rounded-2xl p-4 bg-slate-900/60">
         <div class="flex items-center justify-between mb-2">
@@ -719,7 +680,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </div>
     `).join('');
 
-    // Repertório Sociocultural
     repertoireList.innerHTML = (data.suggested_repertoire || []).map(rep => `
       <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 text-xs">
         <div class="flex items-center justify-between mb-1">
@@ -730,14 +690,12 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </div>
     `).join('');
 
-    // Conectivos
     connectivesList.innerHTML = (data.suggested_connectives || []).map(c => `
       <span class="px-2.5 py-1 bg-slate-800 text-emerald-400 border border-slate-700 rounded-lg text-xs font-semibold">
         ${c}
       </span>
     `).join('');
 
-    // Sugestões de Reescrita
     rewritesContainer.innerHTML = (data.rewrite_suggestions || []).map(rw => `
       <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
         <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-400">
@@ -754,7 +712,6 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       </div>
     `).join('');
 
-    // Transcrição
     resTranscription.textContent = data.transcription || 'Texto não disponível.';
   }
 
@@ -776,7 +733,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     }, stepTime);
   }
 
-  // --- 12. Gráfico Radar das 5 Competências (Chart.js) ---
+  // --- 12. Gráfico Radar das 5 Competências ---
   function renderRadarChart(competencies) {
     const ctx = document.getElementById('competenciesRadarChart');
     if (!ctx) return;
@@ -793,7 +750,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       data: {
         labels: labels,
         datasets: [{
-          label: 'Nota da Sophie',
+          label: 'Pontuação',
           data: dataValues,
           fill: true,
           backgroundColor: 'rgba(245, 158, 11, 0.25)',
@@ -873,9 +830,9 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     if (history.length === 0) {
       historyList.innerHTML = `
         <div class="text-center py-8 text-slate-500">
-          <i class="fa-solid fa-record-vinyl text-4xl mb-2 text-slate-600"></i>
+          <i class="fa-solid fa-folder-open text-4xl mb-2 text-slate-600"></i>
           <p class="text-xs">Nenhum treino salvo ainda no histórico.</p>
-          <p class="text-[11px] text-slate-500">Corrija sua primeira redação e clique em "Salvar no Histórico"!</p>
+          <p class="text-[11px] text-slate-500">Corrija sua primeira redação e clique em "Salvar no Histórico".</p>
         </div>
       `;
       if (historyChart) historyChart.destroy();
@@ -968,181 +925,15 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
   }
 
   btnClearHistory.addEventListener('click', () => {
-    if (confirm('Sophie, deseja limpar todo o histórico de treinos salvos?')) {
+    if (confirm('Deseja limpar todo o histórico de treinos salvos?')) {
       localStorage.removeItem('sophie_essays_history');
       renderHistory();
     }
   });
 
-  // --- 15. Backstage Pass (Rafael, Rock & Alice Oseman: 30 Recados Exclusivos) ---
-  const LOCAL_ROCK_NOTES = [
-    {
-      quote: "Como a Alice Oseman escreveu em Heartstopper: você não precisa ter todas as respostas do mundo agora, só precisa dar um passo de cada vez. 🍂❤️\n\nRespira fundo antes de começar a introdução, você é brilhante e tem um futuro lindo pela frente! Domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Alice Oseman (Heartstopper) • Rafa 🍂"
-    },
-    {
-      quote: "'Hi.' 'Hi.' ✨ Na pegada fofa de Nick e Charlie: tô aqui torcendo por você em cada parágrafo!\n\nQuando bater aquele cansaço dos estudos, lembra que o seu esforço vai valer cada segundo. Você é maravilhosa, Sophie! Domingo que vem te vejo com certeza! 😉❤️",
-      band: "Heartstopper • Rafa 🍂❤️"
-    },
-    {
-      quote: "Como diz a Alice Oseman em Radio Silence: 'Eu me pergunto se, quando ninguém está ouvindo a sua voz, você ainda está fazendo algum som'... 🎧🍂\n\nQuero que você saiba que eu tô sempre aqui te ouvindo e torcendo por você! Sua escrita tem muita sensibilidade e força. Domingo que vem te vejo pra te desejar boa sorte pessoalmente! 😉❤️",
-      band: "Alice Oseman (Radio Silence) • Rafa 🍂"
-    },
-    {
-      quote: "Dica de ouro no estilo Alice Oseman: escreva com verdade e coloque a sua essência nos argumentos. 📖✨\n\nVocê não precisa fingir nada: a sua inteligência e seu olhar crítico já são mais que suficientes pra encantar qualquer corretor do ENEM. Domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Alice Oseman • Rafa 🍂"
-    },
-    {
-      quote: "Mais uma da Alice Oseman em Solitaire: 'Coisas boas podem acontecer, mesmo quando tudo parece meio caótico'. 🍂❤️\n\nConfia no processo e vai com calma. Você é muito esforçada e dedicada, Sophie. Domingo a gente se vê sem falta! 😉❤️",
-      band: "Alice Oseman (Solitaire) • Rafa 🍂"
-    },
-    {
-      quote: "Desculpa por não conseguir te ver hoje, gatinha... Mas domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️\n\nFiz esse site com o maior carinho pra você treinar no ônibus, em casa ou onde estiver com praticidade. Você é linda, super inteligente e esforçada, tenho certeza de que vai gabaritar essa redação! Foco total no treino! ❤️⚡",
-      band: "Rafa ⚡"
-    },
-    {
-      quote: "Desculpa por não conseguir te ver hoje, domingo que vem eu te vejo e te dou aquele beijo de boa sorte! 😉❤️\n\nE como diria o Queen: 'Don't Stop Me Now'! Foca na estrutura dos parágrafos e nos conectivos que essa nota 1000 já tem dona. Tô na torcida por você, gatinha! ❤️",
-      band: "Queen • Rafa ⚡"
-    },
-    {
-      quote: "David Bowie mandou avisar: 'We can be heroes, just for one day'! ⚡\n\nVocê é muito inteligente e tem uma visão crítica incrível. Quando pegar o tema, respira fundo e confia no seu repertório. Domingo que vem te vejo pra comemorar sua evolução! 😉❤️",
-      band: "David Bowie • Rafa ⚡"
-    },
-    {
-      quote: "Lembra do Paul McCartney: 'Take a sad song and make it better'! 🎸\n\nSe bater aquela dúvida na hora da tese, não esquenta: revisa o projeto de texto e vai no seu ritmo. Você é brilhante demais, Sophie! Domingo que vem te dou aquele beijo de boa sorte pessoalmente! 😉❤️",
-      band: "The Beatles • Rafa ⚡"
-    },
-    {
-      quote: "Na pegada cósmica de Vênere Vai Vênus: boas energias pra te dar muita sorte hoje! 🪐❤️\n\nDomingo que vem eu te vejo com certeza pra te desejar boa sorte pessoalmente. Espero que você goste bastante do site, fiz pensando em você pra facilitar sua rotina e te ver brilhando na faculdade! ❤️",
-      band: "Vênere Vai Vênus • Rafa ⚡"
-    },
-    {
-      quote: "Led Zeppelin já profetizou: 'There's a lady who's sure all that glitters is gold... and she's buying a Stairway to Heaven' ⚡\n\nNo nosso caso é a Stairway to 1000! Cada treino seu é um degrau a mais rumo à aprovação. Domingo que vem te vejo sem falta! 😉❤️",
-      band: "Led Zeppelin • Rafa ⚡"
-    },
-    {
-      quote: "Como diria o Oasis em 'Wonderwall': 'Because maybe, you're gonna be the one that saves me'! 🎸✨\n\nNão deixa a ansiedade te pegar, gatinha. Você escreve muito bem e tem repertório de sobra. Domingo a gente se vê pra colocar o papo em dia e te dou um beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Oasis • Rafa ⚡"
-    },
-    {
-      quote: "Dica de ouro do Rafa: capricha nos 5 elementos da proposta de intervenção na C5! 📝\n\nAgente, ação, meio/modo, efeito e detalhamento. Não tem segredo pra quem é inteligente e dedicada como você. Tô muito orgulhoso do seu foco! Domingo que vem eu te vejo! 😉❤️",
-      band: "Dica do Rafa ⚡"
-    },
-    {
-      quote: "Freddie Mercury cantou: 'We Are The Champions'! 👑⚡\n\nE você já é campeã só pela dedicação de treinar redação até nos dias mais corridos. Você é uma garota incrível, Sophie. Domingo que vem te vejo! 😉❤️",
-      band: "Queen • Rafa ⚡"
-    },
-    {
-      quote: "John Lennon dizia: 'Imagine all the people living life in peace'... 🕊️\n\nE eu fico imaginando a sua nota 1000 saindo no boletim do ENEM! Certeza de que a sua vaga tá garantida. Respira, toma uma água e bora pro próximo parágrafo! Te vejo domingo! 😉❤️",
-      band: "John Lennon • Rafa ⚡"
-    },
-    {
-      quote: "Lembra do Pink Floyd: 'Another Brick in the Wall'! 🧱⚡\n\nMas aqui cada parágrafo que você escreve é um tijolo construindo o seu futuro na universidade. Você é muito esforçada, Sophie, gosto muito de você e tô torcendo demais! Domingo te vejo! 😉❤️",
-      band: "Pink Floyd • Rafa ⚡"
-    },
-    {
-      quote: "The Rolling Stones mandaram avisar: 'Start Me Up'! 🎸🔥\n\nBora ligar o turbo nos conectivos e nas referências socioculturais! Você é genial, Sophie. Domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Rolling Stones • Rafa ⚡"
-    },
-    {
-      quote: "Passando pra te lembrar: não se cobre perfeição em todo treino! ☕❤️\n\nO objetivo aqui é praticar sem pressão, no ônibus, em casa ou no intervalo. Fiz essa plataforma pra ser leve pra você. Você é sensacional, Sophie! Te vejo domingo! 😉❤️",
-      band: "Recado do Rafa ⚡"
-    },
-    {
-      quote: "Mais uma de Vênere Vai Vênus: 'A gravidade não segura quem nasceu pra voar'! 🪐✨\n\nConfia na sua caligrafia, no seu pensamento crítico e no seu talento. Domingo que vem te vejo sem falta, gatinha! 😉❤️",
-      band: "Vênere Vai Vênus • Rafa ⚡"
-    },
-    {
-      quote: "Elton John já dizia: 'I'm Still Standing'! 🎹⚡\n\nMesmo quando bater o cansaço dos estudos, lembra que você tá mais perto do que imagina. Admiro muito sua força de vontade, Sophie! Te vejo domingo pra te dar aquele beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Elton John • Rafa ⚡"
-    },
-    {
-      quote: "Dica rápida de conectivos: 'Outrossim', 'Nesse diapasão', 'Sob essa ótica', 'Em consonância'... 📖\n\nUsa com elegância que a banca examinadora do ENEM vai aplaudir de pé! Domingo que vem eu te vejo, gatinha! 😉❤️",
-      band: "Dica do Rafa ⚡"
-    },
-    {
-      quote: "The Who já cantava: 'The Kids Are Alright'! ⚡🎸\n\nE você tá mais que pronta pra detonar nessa prova. Fico feliz demais em poder te dar essa força. Domingo a gente se vê! 😉❤️",
-      band: "The Who • Rafa ⚡"
-    },
-    {
-      quote: "George Harrison mandou o recado: 'Here Comes The Sun, and I say it's all right'! ☀️🎸\n\nDepois de cada redação corrigida, vem o alívio e a evolução. Você é brilhante, Sophie! Domingo que vem te dou aquele beijo de boa sorte pessoalmente! 😉❤️",
-      band: "The Beatles • Rafa ⚡"
-    },
-    {
-      quote: "Você sabia que a sua inteligência e seu jeito esforçado são contagiantes? ⚡❤️\n\nFiz esse cantinho pra você estudar com carinho. Arrebenta na argumentação que o resto é consequência! Domingo que vem te vejo! 😉❤️",
-      band: "Rafa ⚡"
-    },
-    {
-      quote: "Oasis em 'Live Forever': 'Maybe I will never be all the things that I want to be, but now is not the time to cry'... 🎸\n\nÉ tempo de brilhar no ENEM e mostrar todo esse seu potencial! Tô com você nessa jornada, gatinha. Te vejo domingo! 😉❤️",
-      band: "Oasis • Rafa ⚡"
-    },
-    {
-      quote: "Dica da C2: lembra sempre de amarrar o repertório sociocultural com a tese! 💡\n\nNão adianta só citar o autor, tem que mostrar o porquê ele se conecta com a realidade brasileira. Mas você já sabe disso de letra! Domingo que vem te vejo! 😉❤️",
-      band: "Dica do Rafa ⚡"
-    },
-    {
-      quote: "David Bowie em 'Starman': 'There's a starman waiting in the sky, he'd like to come and meet us'... 🌟⚡\n\nE a estrela dessa prova é você! Vai sem medo que o seu texto tá ficando cada dia mais afiado. Domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️",
-      band: "David Bowie • Rafa ⚡"
-    },
-    {
-      quote: "Pausa estratégica: já bebeu água hoje? 💧 Já descansou os olhos 5 minutinhos?\n\nCuidar de você também faz parte da nota 1000! Você é muito especial, Sophie. Domingo a gente se vê! 😉❤️",
-      band: "Cuidado do Rafa ⚡"
-    },
-    {
-      quote: "Como diria Freddie Mercury: 'The Show Must Go On'! 👑⚡\n\nBora pra mais um parágrafo que a aprovação tá cada vez mais perto. Te admiro muito, Sophie! Te vejo domingo! 😉❤️",
-      band: "Queen • Rafa ⚡"
-    },
-    {
-      quote: "Obrigado por me deixar fazer parte da sua preparação pro ENEM, mesmo que com um sitezinho e uma IA rodando! 💻❤️\n\nEspero que esteja te ajudando de verdade. Domingo que vem eu te vejo e te dou aquele beijo de boa sorte pessoalmente! 😉❤️",
-      band: "Rafa ⚡"
-    }
-  ];
-
-  let currentNoteIdx = -1;
-
-  function cycleRockNote() {
-    let nextIdx;
-    do {
-      nextIdx = Math.floor(Math.random() * LOCAL_ROCK_NOTES.length);
-    } while (nextIdx === currentNoteIdx && LOCAL_ROCK_NOTES.length > 1);
-    
-    currentNoteIdx = nextIdx;
-    const note = LOCAL_ROCK_NOTES[nextIdx];
-    
-    rockNoteContent.textContent = `"${note.quote}"`;
-    rockNoteBand.textContent = note.band;
-    
-    // Animação sutil de transição
-    rockNoteContent.classList.remove('animate-fade-in');
-    void rockNoteContent.offsetWidth; // trigger reflow
-    rockNoteContent.classList.add('animate-fade-in');
-  }
-
-  function openRockNote() {
-    cycleRockNote();
-    rockNoteModal.classList.remove('hidden');
-    playRockChime(false);
-  }
-
-  btnOpenRockNote.addEventListener('click', openRockNote);
-  btnOpenRockNoteTop.addEventListener('click', openRockNote);
-  btnCloseRockNote.addEventListener('click', () => rockNoteModal.classList.add('hidden'));
-  btnConfirmRockNote.addEventListener('click', () => {
-    rockNoteModal.classList.add('hidden');
-  });
-  btnNewRockNote.addEventListener('click', () => {
-    // Efeito de giro no ícone de reload
-    const icon = btnNewRockNote.querySelector('i');
-    if (icon) {
-      icon.classList.add('fa-spin');
-      setTimeout(() => icon.classList.remove('fa-spin'), 400);
-    }
-    cycleRockNote();
-  });
-
-  // --- 16. Configuração da Chave API ---
+  // --- 15. Configuração da Chave API ---
   btnOpenSettings.addEventListener('click', () => {
-    apiKeyInput.value = getStoredApiKey();
+    if (apiKeyInput) apiKeyInput.value = getStoredApiKey();
     keyStatusMsg.classList.add('hidden');
     settingsModal.classList.remove('hidden');
   });
@@ -1150,27 +941,23 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
   btnCloseSettings.addEventListener('click', () => settingsModal.classList.add('hidden'));
 
   btnSaveApiKey.addEventListener('click', () => {
-    const key = apiKeyInput.value.trim();
+    const key = apiKeyInput ? apiKeyInput.value.trim() : '';
     if (key) {
       localStorage.setItem('sophie_gemini_api_key', key);
       keyStatusMsg.className = 'text-xs p-3 rounded-xl mb-4 bg-emerald-950 text-emerald-300 border border-emerald-800';
-      keyStatusMsg.textContent = 'Chave salva com sucesso no navegador! ✅';
+      keyStatusMsg.textContent = 'Chave salva com sucesso no navegador.';
       keyStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 inline-block';
     } else {
       localStorage.removeItem('sophie_gemini_api_key');
       keyStatusMsg.className = 'text-xs p-3 rounded-xl mb-4 bg-amber-950 text-amber-300 border border-amber-800';
-      keyStatusMsg.textContent = 'Chave removida. Usando o modo diagnóstico demonstrativo.';
-      keyStatusDot.className = 'w-2 h-2 rounded-full bg-amber-400 inline-block';
+      keyStatusMsg.textContent = 'Usando a chave padrão do sistema.';
+      keyStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 inline-block';
     }
     keyStatusMsg.classList.remove('hidden');
   });
 
   btnTestApiKey.addEventListener('click', async () => {
-    const key = apiKeyInput.value.trim();
-    if (!key) {
-      alert('Por favor, digite uma chave de API antes de testar!');
-      return;
-    }
+    const key = apiKeyInput ? apiKeyInput.value.trim() : '';
 
     keyStatusMsg.className = 'text-xs p-3 rounded-xl mb-4 bg-slate-950 text-slate-300 border border-slate-800';
     keyStatusMsg.textContent = 'Testando conexão com a IA da Google...';
@@ -1186,7 +973,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
       const data = await resp.json();
       if (resp.ok) {
         keyStatusMsg.className = 'text-xs p-3 rounded-xl mb-4 bg-emerald-950 text-emerald-300 border border-emerald-800';
-        keyStatusMsg.textContent = `Conexão bem-sucedida! (${data.message}) ✅`;
+        keyStatusMsg.textContent = `Conexão bem-sucedida! (${data.message})`;
       } else {
         throw new Error(data.detail || 'Falha ao conectar.');
       }
@@ -1196,13 +983,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     }
   });
 
-  if (getStoredApiKey()) {
-    keyStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 inline-block';
-  } else {
-    keyStatusDot.className = 'w-2 h-2 rounded-full bg-amber-400 inline-block';
-  }
-
-  // --- 17. Modo Claro / Escuro ---
+  // --- 16. Modo Claro / Escuro ---
   function applyTheme(isDark) {
     if (isDark) {
       document.documentElement.classList.add('dark');
@@ -1217,7 +998,7 @@ Portanto, medidas estratégicas são urgentes. Cabe ao Ministério da Educação
     }
   }
 
-  const isDarkMode = localStorage.getItem('sophie_dark_mode') !== 'false'; // Dark mode padrão
+  const isDarkMode = localStorage.getItem('sophie_dark_mode') !== 'false';
   applyTheme(isDarkMode);
 
   btnToggleTheme.addEventListener('click', () => {

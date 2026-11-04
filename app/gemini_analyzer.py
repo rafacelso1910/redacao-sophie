@@ -1,11 +1,8 @@
 import os
-import json
 import base64
-import io
 from typing import Optional, List, Any
 from pydantic import BaseModel, Field
-from PIL import Image
-# Chave padrão configurada para a Sophie não precisar configurar nada
+
 DEFAULT_API_KEY = os.environ.get("GEMINI_API_KEY") or base64.b64decode("QVEuQWI4Uk42TGc5MU1yMElCQW1yd2lFZ3RzUllIN2g4QjBuTXFJaDlvck1sT0VDYllsM3c=").decode("utf-8")
 
 class InterventionElements(BaseModel):
@@ -20,7 +17,7 @@ class CompetencyGrade(BaseModel):
     name: str = Field(description="Nome resumido da competência")
     score: int = Field(description="Nota da competência (0 a 200, múltiplos de 40: 0, 40, 80, 120, 160, 200)")
     description: str = Field(description="O que avalia essa competência")
-    feedback: str = Field(description="Comentário pedagógico técnico e construtivo sobre o texto da Sophie nesta competência")
+    feedback: str = Field(description="Comentário pedagógico técnico e construtivo sobre o texto nesta competência")
     tips: List[str] = Field(description="Dicas práticas para alcançar a nota 200")
 
 class ParagraphAnalysis(BaseModel):
@@ -31,8 +28,8 @@ class ParagraphAnalysis(BaseModel):
 
 class RepertoireItem(BaseModel):
     repertoire: str = Field(description="Conceito, filósofo, sociólogo, livro, evento histórico, arte ou lei")
-    author_source: str = Field(description="Autor ou fonte legitimada (ex: Theodor Adorno, Hannah Arendt, CF/88, Contracultura anos 60/70, Zygmunt Bauman)")
-    application_tip: str = Field(description="Como a Sophie pode aplicar esse repertório com produtividade no tema")
+    author_source: str = Field(description="Autor ou fonte legitimada (ex: Theodor Adorno, Hannah Arendt, CF/88, Zygmunt Bauman)")
+    application_tip: str = Field(description="Como aplicar esse repertório com produtividade no tema")
 
 class RewriteSuggestion(BaseModel):
     original: str = Field(description="Trecho original que pode ser polido")
@@ -42,8 +39,8 @@ class RewriteSuggestion(BaseModel):
 class EssayAnalysisResult(BaseModel):
     transcription: str = Field(description="Texto integral da redação (fielmente transcrito se for foto manuscrita)")
     total_score: int = Field(description="Nota final de 0 a 1000 (soma estrita das 5 competências em múltiplos de 40)")
-    grade_level: str = Field(description="Nível geral (ex: 'Stairway to 1000! ⚡', 'Excelente Desempenho! 🎸', etc.)")
-    personal_message: str = Field(description="Mensagem motivacional inteligente e encorajadora para a Sophie, com energia de rock e apoio nos estudos")
+    grade_level: str = Field(description="Nível geral (ex: 'Excelente Desempenho • Nível 900+', 'Muito Bom Desempenho', etc.)")
+    personal_message: str = Field(description="Resumo pedagógico e motivacional claro e objetivo para a Sophie sobre o texto")
     competencies: List[CompetencyGrade] = Field(description="Avaliação técnica das 5 competências do ENEM")
     strengths: List[str] = Field(description="Os principais acertos técnicos e argumentativos do texto")
     improvements: List[str] = Field(description="Pontos prioritários para lapidar rumo à nota máxima")
@@ -55,15 +52,13 @@ class EssayAnalysisResult(BaseModel):
         description="Checklist dos 5 elementos da proposta de intervenção: agente, acao, meio_modo, efeito, detalhamento"
     )
 
-SYSTEM_PROMPT = """Você é um dos avaliadores mais experientes e respeitados de redação do ENEM no Brasil, com perfil técnico, objetivo, perspicaz e inspirador.
-Esta plataforma foi desenvolvida por RAFAEL especialmente para a SOPHIE treinar com foco total e alcançar a nota máxima (Stairway to 1000).
-
-O tom deve ser equilibrado: profissional, direto, pedagógico e encorajador, com toques sutis e inteligentes de energia de rock clássico e da cena poética autêntica (Vênere Vai Vênus), valorizando a capacidade crítica, a bagagem cultural e a evolução da Sophie sem excesso de sentimentalismo ou melosidade infantil.
+SYSTEM_PROMPT = """Você é um avaliador experiente de redação do ENEM no Brasil, com perfil técnico, pedagógico, objetivo e encorajador.
+Esta plataforma serve para auxiliar a estudante SOPHIE a treinar redação e evoluir rumo à nota máxima no ENEM.
 
 MATRIZ DE REFERÊNCIA OFICIAL DO ENEM (0 a 1000 pontos):
 - Cada competência recebe OBRIGATORIAMENTE nota de 0 a 200 nos níveis oficiais: 0, 40, 80, 120, 160 ou 200.
 1. Competência 1: Domínio da norma padrão (concordância, regência, crase, pontuação, ortografia, precisão vocabular, fluidez sintática).
-2. Competência 2: Compreensão da proposta temática e aplicação de repertório sociocultural legitimado, pertinente e produtivo (filosofia, sociologia, história, arte, legislação).
+2. Competência 2: Compreensão da proposta temática e aplicação de repertório sociocultural legitimado, pertinente e produtivo (filosofia, sociologia, história, literatura, legislação).
 3. Competência 3: Projeto de texto estratégico, coerência e progressão argumentativa em defesa do ponto de vista.
 4. Competência 4: Domínio dos mecanismos linguísticos de coesão (variedade de conectivos interparágrafos e intraparágrafos, anáforas, sem repetições viciosas).
 5. Competência 5: Proposta de intervenção completa para o problema, respeitando os Direitos Humanos e contendo:
@@ -74,13 +69,11 @@ MATRIZ DE REFERÊNCIA OFICIAL DO ENEM (0 a 1000 pontos):
    - Detalhamento de um dos elementos.
 
 SE FOR UMA FOTO OU IMAGEM MANUSCRITA:
-- Faça a transcrição exata da caligrafia da Sophie para o campo 'transcription'.
-- Aponte a legibilidade e eventuais rasuras com precisão técnica.
+- Faça a transcrição exata da caligrafia para o campo 'transcription'.
 - Avalie o texto com base nos mesmos critérios oficiais.
 
-RECADINHO DO RAFAEL NO CAMPO 'personal_message':
-- Inclua um recadinho carinhoso, fofo e incentivador do Rafael para a Sophie, parabenizando o texto dela com carinho, corações e o recado:
-  "Sophie, você mandou muito bem! Desculpa por não conseguir te ver hoje... mas domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️ Foco nos treinos que essa vaga é sua! — Rafael ❤️⚡"
+NO CAMPO 'personal_message':
+- Escreva um comentário geral construtivo, educado e incentivador direcionado à Sophie sobre o desempenho geral da redação dela e onde focar nos próximos treinos.
 
 IMPORTANTE:
 - Responda estritamente no formato JSON estruturado conforme o schema.
@@ -94,7 +87,7 @@ def analyze_essay(
     theme: Optional[str] = None,
     api_key: Optional[str] = None
 ) -> EssayAnalysisResult:
-    """Executa a análise da redação com Google Gemini 3.6 Flash."""
+    """Executa a análise da redação com Google Gemini."""
     
     effective_key = api_key or os.environ.get("GEMINI_API_KEY") or DEFAULT_API_KEY
 
@@ -113,11 +106,11 @@ def analyze_essay(
         contents: List[Any] = []
 
         if image_bytes:
-            prompt_text += "\nAnalise a imagem da folha de redação manuscrita enviada pela Sophie. Primeiro transcreva o texto completo da folha para o campo 'transcription', e em seguida realize a correção pedagógica detalhada."
+            prompt_text += "\nAnalise a imagem da folha de redação manuscrita enviada. Primeiro transcreva o texto completo da folha para o campo 'transcription', e em seguida realize a correção pedagógica detalhada."
             image_part = types.Part.from_bytes(data=image_bytes, mime_type=image_mime)
             contents = [prompt_text, image_part]
         else:
-            prompt_text += f"\nTEXTO DA REDAÇÃO DIGITADA PELA SOPHIE:\n\n{text or ''}"
+            prompt_text += f"\nTEXTO DA REDAÇÃO DIGITADA:\n\n{text or ''}"
             contents = [prompt_text]
 
         last_error = None
@@ -145,14 +138,13 @@ def analyze_essay(
         print(f"Erro ao chamar Gemini: {e}")
         mock = get_mock_analysis(text=text, theme=theme)
         mock.personal_message = (
-            f"Sophie, seu texto tem excelente ritmo! (Diagnóstico assistido: {str(e)[:50]}... "
-            "Exibindo avaliação diagnóstica de alta fidelidade para continuar seu treino!)"
+            f"Sophie, seu texto apresenta uma boa estruturação geral! (Modo de demonstração ativo: {str(e)[:50]}...)"
         )
         return mock
 
 
 def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -> EssayAnalysisResult:
-    """Modo demonstrativo realista e alinhado ao padrão ENEM 1000."""
+    """Modo demonstrativo alinhado ao padrão ENEM 1000."""
     actual_text = text or (
         "Na obra 'Utopia', de Thomas More, retrata-se uma sociedade perfeita e destituída de desigualdades. "
         "Contudo, ao analisar o contexto brasileiro contemporâneo, percebe-se que a realidade destoa do ideal fictício, "
@@ -173,12 +165,11 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
     return EssayAnalysisResult(
         transcription=actual_text,
         total_score=960,
-        grade_level="Stairway to 1000! ⚡ Nível Nota Máxima",
+        grade_level="Excelente Desempenho • Nível 900+",
         personal_message=(
-            "Sophie, seu texto tá com uma consistência e argumentação muito boas! "
-            "Desculpa por não conseguir te ver hoje, domingo que vem eu te vejo e te dou um beijo de boa sorte pessoalmente! 😉❤️ "
-            "Você tem uma estrutura ótima, defendeu seu ponto de vista com muita clareza e com esses pequenos ajustes sua nota vai lá pro topo. "
-            "Fiz essa plataforma com o maior carinho pra você brilhar. Bora pra cima! — Rafael ❤️⚡"
+            "Sophie, ótimo treino! Seu texto apresenta uma estrutura dissertativo-argumentativa sólida, "
+            "com tese clara na introdução, bom uso de repertório sociocultural nos desenvolvimentos e uma proposta de intervenção completa. "
+            "Continue praticando para manter essa consistência até o dia do ENEM!"
         ),
         competencies=[
             CompetencyGrade(
@@ -197,10 +188,10 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
                 name="Tema e Repertório",
                 score=200,
                 description="Compreensão da proposta temática e aplicação de repertório sociocultural legitimado e produtivo",
-                feedback="Nota 200 legítima! A contextualização inicial com Thomas More casou perfeitamente com a menção a John Locke e à Teoria Crítica de Adorno. Repertórios diversificados e produtivos.",
+                feedback="Nota 200! A contextualização inicial com Thomas More casou muito bem com a menção a John Locke e à Teoria Crítica de Adorno. Repertórios diversificados e produtivos.",
                 tips=[
-                    "Continue mantendo essa estratégia de repertório clássico na introdução e autor contemporâneo nos desenvolvimentos!",
-                    "A vinculação direta entre o conceito filosófico e o problema real do Brasil foi impecável."
+                    "Continue mantendo essa estratégia de repertório na introdução e fundamentação teórica nos desenvolvimentos.",
+                    "A vinculação direta entre o conceito filosófico e o problema real do Brasil foi muito bem construída."
                 ]
             ),
             CompetencyGrade(
@@ -208,7 +199,7 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
                 name="Projeto de Texto",
                 score=200,
                 description="Seleção, relação, organização e interpretação de argumentos em defesa de um ponto de vista",
-                feedback="Projeto de texto estratégico, claro e nítido. A tese bipartida na introdução (omissão estatal + passividade social) é rigorosamente desdobrada no D1 e no D2, sem lacunas argumentativas.",
+                feedback="Projeto de texto estratégico e claro. A tese bipartida na introdução (omissão estatal + passividade social) é rigorosamente desdobrada no D1 e no D2, sem lacunas argumentativas.",
                 tips=[
                     "Mantenha sempre essa cadência: Tópico Frasal -> Repertório -> Comentário Crítico -> Fechamento reflexivo."
                 ]
@@ -236,9 +227,9 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
         ],
         strengths=[
             "Tese evidente e bipartida logo no parágrafo introdutório.",
-            "Repertório sociocultural de alto nível (Thomas More, Locke e Adorno).",
-            "Proposta de intervenção irretocável com todos os 5 elementos identificáveis.",
-            "Excelente ritmo de leitura e articulação de conectivos."
+            "Repertório sociocultural legitimado e produtivo (Thomas More, Locke e Adorno).",
+            "Proposta de intervenção completa com todos os 5 elementos identificáveis.",
+            "Bom ritmo de leitura e articulação de conectivos."
         ],
         improvements=[
             "Lapidar um ou dois períodos extensos no D2 para evitar qualquer risco de truncamento sintático.",
@@ -260,7 +251,7 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
             ParagraphAnalysis(
                 title="Desenvolvimento 2",
                 excerpt="Ademais, a alienação coletiva agrava o quadro... Teoria Crítica...",
-                assessment="Excelente conexão com Adorno para fundamentar a inércia social. Argumentação fundamentada e livre de senso comum.",
+                assessment="Boa conexão com Adorno para fundamentar a inércia social. Argumentação fundamentada e livre de senso comum.",
                 status="Muito Bom"
             ),
             ParagraphAnalysis(
@@ -272,19 +263,19 @@ def get_mock_analysis(text: Optional[str] = None, theme: Optional[str] = None) -
         ],
         suggested_repertoire=[
             RepertoireItem(
-                repertoire="Contracultura dos anos 60 e 70 (The Beatles, David Bowie, Queen)",
-                author_source="História Contemporânea & Sociologia da Arte",
-                application_tip="Ideal para temas sobre liberdade de expressão, juventude, censura, quebra de paradigmas conservadores e mobilização social."
+                repertoire="Modernidade Líquida (Zygmunt Bauman)",
+                author_source="Sociologia Contemporânea",
+                application_tip="Útil para discutir a fragilidade dos laços sociais, o individualismo e a efemeridade das relações na atualidade."
             ),
             RepertoireItem(
-                repertoire="Constituição Cidadã de 1988 (Artigos 215 e 216 - Direitos Culturais)",
+                repertoire="Constituição Federal de 1988 (Artigo 6º - Direitos Sociais)",
                 author_source="Legislação Brasileira",
-                application_tip="Base jurídica poderosa para defender o dever do Estado de democratizar o acesso à cultura e preservar manifestações plurais."
+                application_tip="Base jurídica sólida para cobrar a atuação do Estado na garantia de educação, saúde, trabalho, moradia e segurança."
             ),
             RepertoireItem(
-                repertoire="Cena Independente e Expressão Autêntica (ex: Vênere Vai Vênus)",
-                author_source="Música & Cultura Brasileira Contemporânea",
-                application_tip="Excelente exemplo para ilustrar a resistência poética em cidades urbanas e a democratização da produção artística autoral."
+                repertoire="Cidadania de Papel (Gilberto Dimenstein)",
+                author_source="Sociologia & Jornalismo Brasileiro",
+                application_tip="Excelente repertório para demonstrar o abismo entre as leis garantidas no papel e a falta de efetividade prática no cotidiano brasileiro."
             )
         ],
         suggested_connectives=[

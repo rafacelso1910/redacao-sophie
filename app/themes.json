@@ -474,11 +474,11 @@
     "description": "Discussão acerca do aumento da ansiedade e depressão entre adolescentes em tempos de redes sociais, solidão e cobranças por aprovação.",
     "texts": [
       "Texto 1: A comparação constante em redes sociais intensifica sentimentos de frustração, solidão e baixa autoestima na juventude.",
-      "Texto 2: Na literatura contemporânea, as obras da escritora britânica Alice Oseman (como Heartstopper, Solitaire e Radio Silence) retratam com extrema sensibilidade a vulnerabilidade emocional dos jovens e a urgência de redes de apoio sem julgamentos.",
+      "Texto 2: O filósofo sul-coreano Byung-Chul Han, na obra Sociedade do Cansaço, analisa como o excesso de cobrança por desempenho e hiperconexão gera esgotamento psíquico e ansiedade na sociedade contemporânea.",
       "Texto 3: A presença de psicólogos e assistentes sociais nas escolas públicas (Lei 13.935/19) é um avanço crucial para acolher os alunos antes do agravamento das crises."
     ],
     "keywords": [
-      "Alice Oseman (Heartstopper)",
+      "Byung-Chul Han (Sociedade do Cansaço)",
       "Ansiedade juvenil",
       "Lei 13.935/19",
       "Acolhimento escolar",
@@ -594,21 +594,21 @@
     ]
   },
   {
-    "id": "aposta-cultura-rock-resistencia",
+    "id": "aposta-cultura-arte-transformacao",
     "title": "A música e a arte como instrumentos de resistência e transformação social",
     "category": "Apostas 2026 • Cultura & Sociedade",
-    "description": "O poder da expressão artística, do rock clássico e da literatura jovem no enfrentamento ao conservadorismo autoritário e no florescimento de novas ideias.",
+    "description": "O papel das manifestações artísticas, da música e da literatura na formação da identidade cultural e na promoção da cidadania.",
     "texts": [
-      "Texto 1: Nas décadas de 60 e 70, expoentes da contracultura como The Beatles, David Bowie, Queen e Led Zeppelin contestaram tabus e transformaram canções em hinos de liberdade e união geracional.",
-      "Texto 2: Na cena independente brasileira contemporânea (como a banda autoral Vênere Vai Vênus) e batalhas de rima periféricas, o verso mantém vivo o protesto contra injustiças sociais.",
-      "Texto 3: O Artigo 215 da Constituição Cidadã assegura o pleno exercício dos direitos culturais e apoio à difusão das manifestações artísticas populares e independentes."
+      "Texto 1: Ao longo da história brasileira, movimentos culturais como o Modernismo de 1922 e a Tropicália utilizaram a música, a literatura e as artes plásticas para repensar a identidade nacional e questionar desigualdades.",
+      "Texto 2: Nas periferias urbanas contemporâneas, coletivos culturais, saraus literários e expressões musicais atuam como ferramentas de inclusão social e protagonismo juvenil.",
+      "Texto 3: O Artigo 215 da Constituição Federal de 1988 assegura a todos o pleno exercício dos direitos culturais e o acesso às fontes da cultura nacional."
     ],
     "keywords": [
-      "Contracultura e Rock",
-      "Liberdade de expressão",
+      "Modernismo de 1922",
+      "Direitos culturais",
       "Artigo 215 da CF/88",
-      "Vênere Vai Vênus",
-      "Theodor Adorno (Teoria Crítica)"
+      "Protagonismo periférico",
+      "Theodor Adorno (Indústria Cultural)"
     ]
   },
   {
@@ -636,15 +636,15 @@
     "description": "O papel crucial dos livros e da literatura na expansão do vocabulário, do senso crítico, da empatia e da compreensão letrada do mundo.",
     "texts": [
       "Texto 1: O sociólogo Antonio Candido, em O Direito à Literatura, defende que a fruição da arte das palavras é uma necessidade humana básica indispensável para humanização do indivíduo.",
-      "Texto 2: A literatura contemporânea (como os romances juvenis de Alice Oseman) tem demonstrado imenso poder de reconectar jovens à leitura de livros físicos, promovendo discussões sobre acolhimento e diversidade.",
+      "Texto 2: A pesquisa Retratos da Leitura no Brasil aponta que a mediação de professores e o acesso a bibliotecas comunitárias são fatores determinantes para despertar o interesse de jovens pela leitura literária.",
       "Texto 3: Pesquisas indicam que a média de livros lidos por habitante no país permanece estagnada, exigindo bibliotecas públicas atraentes e projetos escolares permanentes de incentivo à leitura."
     ],
     "keywords": [
       "Antonio Candido (O Direito à Literatura)",
-      "Alice Oseman",
+      "Retratos da Leitura no Brasil",
       "Letramento crítico",
       "Bibliotecas escolares",
-      "Empatia e alteridade"
+      "Plano Nacional do Livro e Leitura"
     ]
   },
   {

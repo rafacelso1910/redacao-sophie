@@ -7,7 +7,6 @@ import threading
 import webbrowser
 import uvicorn
 
-# Configurações
 sys.stdout.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
 sys.stderr.reconfigure(encoding='utf-8', errors='replace', line_buffering=True)
 
@@ -49,9 +48,9 @@ def tunnel_worker():
                         url = match.group(0)
                         latest_public_url = url
                         with open(LINK_FILE, "w", encoding="utf-8") as f:
-                            f.write(f"LINK ONLINE PARA O CELULAR DA SOPHIE:\n{url}\n\nAbra este link no celular da Sophie pelo 4G/Wi-Fi para usar a plataforma de qualquer lugar!\n")
+                            f.write(f"LINK ONLINE PARA O CELULAR (SOPHIE):\n{url}\n\nAbra este link no celular pelo 4G/Wi-Fi para usar a plataforma de qualquer lugar!\n")
                         public_url_event.set()
-                        print(f"\n⚡ TUNNEL CLOUDFLARE CONECTADO: {url}\n")
+                        print(f"\nTUNNEL CLOUDFLARE CONECTADO: {url}\n")
         except Exception as e:
             print(f"Aviso no tunnel: {e}")
 
@@ -60,7 +59,6 @@ def tunnel_worker():
 def start_tunnel():
     t = threading.Thread(target=tunnel_worker, daemon=True)
     t.start()
-    # Espera até 20 segundos pela primeira URL
     public_url_event.wait(timeout=20)
     return latest_public_url
 
@@ -70,26 +68,23 @@ def open_browser():
 
 if __name__ == "__main__":
     print("\n" + "=" * 70)
-    print("   ⚡ STAIRWAY TO 1000 • REDAÇÃO ENEM (SOPHIE & RAFAEL) ⚡")
-    print("        The British Rock Edition • Queen • Bowie • Beatles")
+    print("   PLATAFORMA DE REDAÇÃO ENEM • SOPHIE")
     print("=" * 70)
     print("\nIniciando servidor local e gerando link público seguro para celular...\n")
 
-    # Inicia o tunnel em segundo plano para extrair a URL
     public_url = start_tunnel()
 
     print("-" * 70)
-    print("📍 ACESSO LOCAL (Computador):")
-    print(f"   👉 http://localhost:{LOCAL_PORT}")
-    print("\n📱 ACESSO ONLINE (Para o Celular da Sophie - 4G ou Wi-Fi):")
+    print("ACESSO LOCAL (Computador):")
+    print(f"   -> http://localhost:{LOCAL_PORT}")
+    print("\nACESSO ONLINE (Para o Celular - 4G ou Wi-Fi):")
     if public_url:
-        print(f"   👉 {public_url}")
+        print(f"   -> {public_url}")
         print(f"\n   (O link também foi salvo em: LINK_PUBLICO_PARA_CELULAR.txt)")
     else:
-        print("   (Tunnel não disponível no momento. Use http://localhost:8000)")
+        print(f"   (Tunnel não disponível no momento. Use http://localhost:{LOCAL_PORT})")
     print("-" * 70 + "\n")
 
-    # Abre o navegador no computador
     threading.Thread(target=open_browser, daemon=True).start()
 
     try:
